@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PuppieAI Test</title>
+    <link rel="stylesheet" href="dist/styles.css">
+    <!-- React dependencies first -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Add this before your UMD bundle -->
+    <script>
+        window.process = {
+            env: {
+                NODE_ENV: 'production'
+            }
+        };
+    </script>
+    <script src="./dist/puppie-ai.umd.js"></script>
+    <!-- Add this to check if PuppieAI is loaded properly -->
+    <script>
+        window.addEventListener('load', () => {
+            console.log('PuppieAI available:', PuppieAI);
+        });
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        // Wait for DOM content to be loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const messages = [
+                { text: "Hi there, welcome to Puppie 👋 You are now speaking with Fin AI Agent. I can do much more than chatbots you've seen before. Tell me as much as you can about your question and I'll do my best to help you in an instant.", type: 'agent' },
+                { text: 'What do you do?', type: 'user' },
+                { text: "You are now speaking with Fin AI Agent. I can do much more than chatbots you've seen before.", type: 'agent' }
+            ];
+
+            const handleSendMessage = (message) => {
+                console.log("Sent Message:", message);
+            };
+
+            // Only render if PuppieAI is available
+            if (typeof PuppieAI !== 'undefined' && PuppieAI.default) {
+                const container = document.getElementById('root');
+                const root = ReactDOM.createRoot(container);
+                
+                root.render(React.createElement(PuppieAI.default, {
+                    messages: messages,
+                    onSendMessage: handleSendMessage
+                }));
+            } else {
+                console.error('PuppieAI or PuppieAI.Puppie is not properly loaded');
+            }
+        });
+    </script>
+</body>
+</html> 

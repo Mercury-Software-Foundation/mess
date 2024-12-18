@@ -1,0 +1,87 @@
+{
+  "name": "mess",
+  "version": "0.1.7",
+  "description": "This is a dynamic form package",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "style": "dist/styles.css",
+  "unpkg": "dist/mess.umd.js",
+  "jsdelivr": "dist/mess.umd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rollup": "rollup -c --bundleConfigAsCjs",
+    "build": "rollup -c --bundleConfigAsCjs && npm run build:umd",
+    "build:umd": "rollup -c rollup.config.umd.js --bundleConfigAsCjs"
+  },
+  "author": "",
+  "contributors": [
+    {
+      "name": "Manikanta Kurapati",
+      "email": "kurapatimanikanta66@gmail.com",
+      "url": "https://github.com/Manikanta718"
+    },
+    {
+      "name": "Avinash Koduri",
+      "email": "saiavinashkoduri@gmail.com",
+      "url": "https://github.com/avikoduri"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mercury-Software-Foundation/mess"
+  },
+  "license": "ISC",
+  "keywords": [
+    "mess",
+    "css",
+    "responsive-css",
+    "styled-css",
+    "emoji-css",
+    "dynamic-css",
+    "responsive-design",
+    "breakpoints",
+    "inline-styling",
+    "css-in-js",
+    "media-queries",
+    "style-components",
+    "frontend",
+    "ui",
+    "react",
+    "emotion",
+    "emoji-styled-css",
+    "tailwind-alternative",
+    "custom-css",
+    "breakpoint-configuration",
+    "responsive-styling",
+    "emoji-styled-css"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.3",
+    "autoprefixer": "^10.4.20",
+    "react": "^18.3.1",
+    "rollup": "^4.18.1",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.13.4",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@medusajs/ui": "^4.0.2",
+    "@rollup/plugin-replace": "^6.0.1",
+    "chokidar": "^4.0.1",
+    "facepaint": "^1.2.1",
+    "gsap": "^3.12.5",
+    "react-icons": "^5.3.0"
+  }
+}
