@@ -1,17 +1,17 @@
-# emoji-styled-css
+# mess
 
-**emoji-styled-css** is a utility-first CSS library built with TypeScript, designed to simplify styling components using dynamic breakpoints and easy-to-use utility functions. It allows you to create responsive, customizable styles based on user-configurable breakpoints and supports simple styling through semantic tags like `Button`,`Text`,`Image`,`Box`,`Input`,`Label`,`ul`,`li`,`Footer`,`Form` and more.
+**mess** is a utility-first CSS library built with TypeScript, designed to simplify styling components using dynamic breakpoints and easy-to-use utility functions. It allows you to create responsive, customizable styles based on user-configurable breakpoints and supports simple styling through semantic tags like `Button`,`Text`,`Image`,`Box`,`Input`,`Label`,`ul`,`li`,`Footer`,`Form` and more.
 
 ---
 
 ## 📦 Installation
 
-To install **emoji-styled-css**, you can use npm or yarn.
+To install **mess**, you can use npm or yarn.
 
 ```bash
-npm install emoji-styled-css
+npm install mess
 or
-yarn add emoji-styled-css
+yarn add mess
 
 ```
 📝 Usage
@@ -19,9 +19,9 @@ yarn add emoji-styled-css
 
 ### Importing Tags
 
-To use **emoji-styled-css**, you first need to import the semantic tags (Box, Text, Button, etc.) into your React project.
+To use **mess**, you first need to import the semantic tags (Box, Text, Button, etc.) into your React project.
 ```typescript
-import { Box, Text, Button } from 'emoji-styled-css'
+import { Box, Text, Button } from 'mess'
 ```
 ## Applying CSS with Tags
 
@@ -29,7 +29,7 @@ Once you’ve imported the tags, you can start applying styles directly to these
 
 **Example of usage:**
 ```javascript
-import { Button,Text,Box,Image} from 'emoji-styled-css';
+import { Button,Text,Box,Image} from 'mess';
 
 const MyComponent = () => {
   return (
@@ -135,7 +135,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 3. **Importing the Tags**: Explains how to import the key components (`Box`, `Text`, `Button`, etc.) into a React project.
 4. **Applying the CSS**: Shows how to apply CSS using props with responsive breakpoints.
 5. **Benefits**: Highlights the advantages of using the package, such as responsiveness, ease of use, and customization.
-6. **Advanced Configuration**: Briefly introduces how users can customize the breakpoints by configuring the `emoji.config.js` file.
+6. **Advanced Configuration**: Briefly introduces how users can customize the breakpoints by configuring the `mess.config.js` file.
 7. **Contribution**: Encourages developers to contribute to the package if they want to add features or improve it.
 
 ---
