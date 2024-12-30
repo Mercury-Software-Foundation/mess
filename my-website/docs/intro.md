@@ -4,7 +4,8 @@ sidebar_position: 1
 
 # Getting Started
 
-**Mess** is a utility-first CSS library built with TypeScript, designed to simplify styling components using dynamic breakpoints and easy-to-use utility functions. It allows you to create responsive, customizable styles based on user-configurable breakpoints and supports simple styling through semantic tags like `Button` , `Text` , `Image` , `Box` , `Input` , `Label` , `ul`,  `li` , `Footer` , `Form` and more.
+The **mess** library allows you to build responsive, styled components with ease using inline styles. Each component supports customizable breakpoints like `sm` , `md`, `lg` , and `xl`, allowing you to define styles for different screen sizes.
+
 
 ## Installation
 To install mess, you can use npm or yarn.
@@ -16,5 +17,3 @@ npm i mess
 ```bash
 yarn add mess
 ```
-
-

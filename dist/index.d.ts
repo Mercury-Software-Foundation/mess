@@ -5,14 +5,14 @@ interface Styles {
     base?: string;
     [key: string]: string | undefined;
 }
-declare const Mess: (styles: Styles) => string;
+declare const Mess: (styles: Styles | string) => string;
 /**
  * Dynamically merge styles for specific breakpoints.
  * @param baseStyles - The base styles object (e.g., theme styles).
  * @param overrides - The overrides object with custom styles.
  * @returns Merged styles object.
  */
-declare const Clx: (baseStyles: Styles, overrides: Styles) => Styles;
+declare const Clx: (baseStyles: Styles | string, overrides: Styles) => Styles;
 
 /** @jsxImportSource @emotion/react */
 declare const Button: _emotion_styled.StyledComponent<any, react.DetailedHTMLProps<react.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, {}>;

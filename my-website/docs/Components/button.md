@@ -4,40 +4,48 @@ sidebar_position: 1
 
 # Button
 
-Add **Markdown or React** files to `src/pages` to create a **standalone page**:
+---
 
-- `src/pages/index.js` → `localhost:3000/`
-- `src/pages/foo.md` → `localhost:3000/foo`
-- `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
+# Styled Button Example
 
-## Create your first React Page
+The following is an example of how to use the `Button` component from `mess`:
 
-Create a file at `src/pages/my-react-page.js`:
+### Code
 
-```jsx title="src/pages/my-react-page.js"
-import React from 'react';
-import Layout from '@theme/Layout';
+```jsx title="ButtonExample.js"
+import { Button } from 'mess';
 
-export default function MyReactPage() {
+const StyledButtonExample = () => {
   return (
-    <Layout>
-      <h1>My React page</h1>
-      <p>This is a React page</p>
-    </Layout>
+    <Button
+      styles={{
+        base: `
+          background-color: #3498db;
+          color: white;
+          font-size: 16px;
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s ease-in-out;
+          &:hover {
+            background-color: #2980b9;
+          }
+        `,
+        sm: `
+          font-size: 14px;
+          padding: 8px 16px;
+        `,
+        lg: `
+          font-size: 18px;
+          padding: 12px 24px;
+        `,
+      }}
+    >
+      Click Me
+    </Button>
   );
-}
+};
+
+export default StyledButtonExample;
 ```
-
-A new page is now available at [http://localhost:3000/my-react-page](http://localhost:3000/my-react-page).
-
-## Create your first Markdown Page
-
-Create a file at `src/pages/my-markdown-page.md`:
-
-```mdx title="src/pages/my-markdown-page.md"
-# My Markdown page
-
-This is a Markdown page
-```
-
-A new page is now available at [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).

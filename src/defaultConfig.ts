@@ -11,5 +11,24 @@ export const defaultBreakpoints = {
     colors: { primary: "#1e90ff", secondary: "#ffa500" },
     fontSizes: { small: "30px", medium: "16px", large: "20px" },
     paddings: { small: "80px", medium: "12px", large: "16px" },
+    classes: {
+      buttonStyles: {
+        contained:{
+          base: "padding: $medium;  background-color: yellow;",
+          sm: "font-size: 10px; padding:50px; ",
+          lg: "color: black; background-color: green; border-radius:50px;",
+        },
+        containedSmall:{
+          base: "padding: $medium;  background-color: yellow;",
+          sm: "font-size: 10px; padding:50px; ",
+          lg: "color: black; background-color: green; border-radius:50px; padding: $small",
+        },
+        outlined:{
+          base: "padding: $medium;  ",
+          sm: "font-size: 10px; padding:10px 20px; ",
+          lg: "color: black; border :2px solid green; background-color:transparent; border-radius:50px; color:black;",
+        }
+      },
 
+    },
   };

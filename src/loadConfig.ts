@@ -17,7 +17,7 @@ export const loadConfig = (): any => {
         colors: { ...defaultTheme?.colors, ...userConfig.theme?.colors },
         fontSizes: { ...defaultTheme?.fontSizes, ...userConfig.theme?.fontSizes },
         paddings: { ...defaultTheme?.paddings, ...userConfig.theme?.paddings },
-        classes: {  ...userConfig.theme?.classes },
+        classes: { ...defaultTheme?.classes, ...userConfig.theme?.classes },
 
         // Add more theme properties here if needed
       },
