@@ -1,7 +1,7 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
-## Example of usage: ##
+## Example of sample usage: ##
 ### Here's a simple example to showcase the core functionality of mess components ###
 ```javascript
 import { Box, Text, Button } from 'mess';
