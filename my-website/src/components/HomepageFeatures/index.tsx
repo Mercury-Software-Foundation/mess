@@ -1,70 +1,42 @@
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+'use client';
+import React from 'react';
+import Navbar from '../NavBar';
+import { MdArrowOutward, MdOutlineArrowOutward } from 'react-icons/md';
+import "../../app.css";
 
-type FeatureItem = {
-  title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: JSX.Element;
-};
-
-const FeatureList: FeatureItem[] = [
-  {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-];
-
-function Feature({title, Svg, description}: FeatureItem) {
+function Homepage() {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden ">
+    {/* <div className="fixed top-0 left-0 w-full z-10">
+      <Navbar />
+    </div> */}
+    <div className="flex flex-col items-center justify-center text-center text-black px-8 h-screen ">
+      <div className="   p-8  bg-transparent max-w-2xl  ">
+        <h1 className="font-Safiro text-[4rem]  ">MESS</h1>
+        <div className='flex flex-col gap-4'>
 
-export default function HomepageFeatures(): JSX.Element {
-  return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+        <div className="flex items-center justify-center space-x-3 text-sm text-[#505050]">
+          <span className='font-Safiro'>Avinash</span>
+          <span>/</span>
+          <span className='font-Safiro'>YEAR. 2023</span>
+        </div>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-gray-700 text-start w-[50%] line-clamp-2 font-Safiro">
+            A NodeCrud application is a basic framework for building a backend API that allows you to manage data effectively. 
+            It serves as a foundation for more complex applications and helps you learn fundamental concepts of Node.js, Express.js, 
+            and database interactions.
+          </p>
+          <div>
+            <button className="flex flex-row gap-2 justify-center items-center px-4 py-2 border-black border rounded-[14px] text-sm  font-Safiro hover:bg-black hover:text-white trasation duration-300 ease-in-out">
+              VISIT <MdOutlineArrowOutward />
+            </button>
+          </div>
+        </div>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </div>
+  )
 }
+
+export default Homepage

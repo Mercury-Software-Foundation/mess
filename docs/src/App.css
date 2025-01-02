@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Manrope-ExtraBold";
+    src: url("../src/fonts/Manrope-ExtraBold.ttf");
+  }
+  @font-face {
+    font-family: "Manrope-Bold";
+    src: url("../src/fonts/Manrope-Bold.ttf");
+  }
+  @font-face {
+    font-family: "Manrope-Light";
+    src: url("../src/fonts/Manrope-Light.ttf");
+  }
+  @font-face {
+    font-family: "Manrope-ExtraLight";
+    src: url("../src/fonts/Manrope-ExtraLight.ttf");
+  }
+  @font-face {
+    font-family: "Manrope-Medium";
+    src: url("../src/fonts/Manrope-Medium.ttf");
+  }
+  @font-face {
+    font-family: "Manrope-Regular";
+    src: url("../src/fonts/Manrope-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Manrope-SemiBold";
+    src: url("../src/fonts/Manrope-SemiBold.ttf");
+  }
+  @font-face{
+     font-family: "Safiro";
+  src: url("../src/fonts/safiro-medium.otf");
+  }
+
+  
+
+
+  .color-box {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* For Webkit browsers */
+  }
+  
+  .no-scrollbar {
+    scrollbar-width: none; /* For Firefox */
+  }
+  
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
