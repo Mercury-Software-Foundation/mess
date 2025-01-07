@@ -26,16 +26,16 @@ export const Mess = (styles: Styles | string): string => {
   const config = loadConfig();
   const breakpoints: Breakpoints = config.breakpoints;
   const theme: Theme = config.theme;
-console.log(breakpoints,theme,styles,typeof(styles),"mess")
+// console.log(breakpoints,theme,styles,typeof(styles),"mess")
   let resolvedStyles: Styles = {};
 
   // If styles is a string, resolve it from config.theme.classes
   if (typeof styles === "string") {
     const stylePath = styles.replace(/^\$|\s+/g, "").split(".");
     let currentLevel: any = theme.classes;
-  console.log(stylePath,currentLevel,"stylepath,currentLevel")
+  // console.log(stylePath,currentLevel,"stylepath,currentLevel")
     for (const key of stylePath) {
-  console.log(currentLevel,currentLevel[key],"stylepath,currentLevel")
+  // console.log(currentLevel,currentLevel[key],"stylepath,currentLevel")
       
       if (currentLevel && currentLevel[key]) {
         currentLevel = currentLevel[key];
@@ -145,7 +145,7 @@ export const Clx = (baseStyles: Styles | string, overrides: Styles) => {
 
   // Start merging the resolved base styles with overrides
   const mergedStyles: Styles = { ...resolvedBaseStyles };
-  console.log(resolvedBaseStyles, overrides, "Resolved BaseStyles and Overrides");
+  // console.log(resolvedBaseStyles, overrides, "Resolved BaseStyles and Overrides");
 
   for (const key in overrides) {
     if (resolvedBaseStyles[key]) {
@@ -163,6 +163,6 @@ export const Clx = (baseStyles: Styles | string, overrides: Styles) => {
     }
   }
 
-  console.log(mergedStyles, "Final Merged Styles");
+  // console.log(mergedStyles, "Final Merged Styles");
   return mergedStyles;
 };

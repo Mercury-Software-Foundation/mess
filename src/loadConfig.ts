@@ -3,7 +3,7 @@ import * as path from 'path';
 
 export const loadConfig = (): any => {
   const configPath = path.resolve(process.cwd(), 'mess.config.js');
-  console.log(configPath, "Config Path");
+  // console.log(configPath, "Config Path");
 
   try {
     // Clear the require cache to ensure the latest changes are picked up
@@ -23,7 +23,7 @@ export const loadConfig = (): any => {
       },
     };
   } catch (error) {
-    console.warn(`Config file not found or invalid. Using default configurations.`, error);
+    // console.warn(`Config file not found or invalid. Using default configurations.`, error);
 
     // Return defaults if config file is not found or invalid
     return {
