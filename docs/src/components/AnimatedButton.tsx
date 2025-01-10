@@ -56,6 +56,7 @@ export const AnimatedVisitButton = ({
   };
 
   return (
+    <a href="/docs/intro" className="no-underline">
     <button
       ref={buttonRef}
       className={cn(
@@ -74,5 +75,6 @@ export const AnimatedVisitButton = ({
         }}
       ></div>
     </button>
+    </a>
   );
 };
