@@ -28,35 +28,8 @@ import '../App.css'
 };
 
 export const CodeDisplay = () => {
-  const codes = [
-    `
-<figure className="bg-slate-100 rounded-xl p-8 md:flex">
-  <img
-    className="w-full h-full md:w-48 md:h-auto rounded-full mx-auto"
-    src="/path-to-image.jpg"
-    alt="Sarah Dayan"
-  />
-  <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
-    <blockquote>
-      <p className="text-lg font-medium">
-        “Tailwind CSS is the only framework that I've seen scale on large
-        teams. It’s easy to customize, adapts to any design, and the build
-        size is tiny.”
-      </p>
-    </blockquote>
-    <figcaption className="font-medium">
-      <div className="text-sky-500 dark:text-sky-400">Sarah Dayan</div>
-      <div className="text-slate-700 dark:text-slate-500">
-        Staff Engineer, Algolia
-      </div>
-    </figcaption>
-  </div>
-</figure>
-    `,
-    
   
-    
-  ];
+  
 
   return (
     <div className="space-y-4">

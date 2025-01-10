@@ -1,159 +1,131 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
-import '../App.css';
-import styles from './index.module.css';
+import React from 'react';
+import MainLayout from '../layout/MainLayout';
 import HeroBanner from '../components/HeroBanner/HeroBanner';
-import { BackgroundGradientAnimation } from '../components/bgGradient';
-import CodeOutputLayout from '../components/Sample';
-import Navbar from '../components/Navbar';
+import Section from '../components/Usage';
 import { AnimatedTestimonials } from '../components/contributionCards';
 import { BackgroundBeams } from '../components/contributionCards/backgroundBeans';
-import Usage from '../components/Usage';
-import OurWork from '../components/Usage/SampleScroll';
-import Section from '../components/Usage';
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from 'react';
-import { AuroraBackground } from '../components/Usage/aurora-background';
-import { motion } from "framer-motion";
+import { HeroParallaxDemo } from '../components/ourPartners/products';
+import Buttons from '../components/ourcomponentssection/button';
+import Footer from '../components/Footer';
+import Card from '../components/ourcomponentssection/Card';
+import LoginForm from '../components/ourcomponentssection/login';
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
-gsap.registerPlugin(ScrollTrigger);
+export default function Home() {
+  const handleGoogleLogin = (formData: { username: string; password: string }) => {
+    console.log("Form Submitted", formData);
+  };
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
+  const handleGoogleSignIn = () => {
+    console.log("Google Sign-In clicked");
+  };
 
-  return (
-    <header className={clsx(styles.heroBanner)}>
-      <meta name="description" content="@mercury-js/core is a rapid API generation package that simplifies backend service development by generating Mongoose models, CRUD operations, GraphQL typedefs, and resolvers from a JSON model. It also supports pre- and post-event hooks and access control via profiles, enabling field-level and operation-level permissions." />
-      <div className="container">
+  const handleGithubLogin = () => {
+    console.log("GitHub Sign-In clicked");
+  };
 
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="">{siteConfig.tagline}</p>
-
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
-          >
-            Mercury Js Tutorial - 10min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
-
+  const externalProviders = [
+    {
+      name: "Google",
+      icon: <FcGoogle className="mr-2" />,
+      onClick: handleGoogleSignIn,
+    },
+    {
+      name: "GitHub",
+      icon: <FaGithub className="mr-2" />,
+      onClick: handleGithubLogin,
+    },
+  ];
   const testimonials = [
     {
       quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "An experienced visionary, the founder of Mercury embodies the spirit of innovation, transforming challenges into opportunities and inspiring others to reach for the stars.",
+      name: "Roshan Kumar Gujarathi",
+      designation: "Artructure  of Mercury ",
+      src: "https://res.cloudinary.com/dystdzzi0/image/upload/v1736230601/RoshankPhoto_a5ihdo.jpg",
     },
     {
       quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Michael Rodriguez",
-      designation: "CTO at InnovateSphere",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "In a short span of time, he achieved what seemed impossible, rising to greater heights with unwavering determination—an inspiration for every developer striving to turn ambition into reality",
+      name: "Praveen vuddagiri",
+      designation: "Software Developer ",
+      src: "https://res.cloudinary.com/dystdzzi0/image/upload/v1736417751/praveen_hijvgl.jpg",
     },
     {
       quote:
-        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-      name: "Emily Watson",
-      designation: "Operations Director at CloudScale",
-      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        " A creator of innovative packages, and a mentor to new talent, he leads with expertise and inspires with his dedication to building both exceptional code and exceptional teams.",
+      name: "Avinash Koduri",
+      designation: "Web Developer at Vithi IT Solutions",
+      src: "https://res.cloudinary.com/dystdzzi0/image/upload/v1736228451/AvinashPhoto_zfe1iy.jpg",
     },
     {
       quote:
-        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-      name: "James Kim",
-      designation: "Engineering Lead at DataPro",
-      src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "Despite being new to the field, his rapid learning and mastery of GSAP have allowed him to create breathtaking animations, proving that passion and a drive for excellence can turn any newcomer into a standout talent.",
+      name: "Manikanta Kurapati",
+      designation: "Frontend Developer at Vithi IT Solutions",
+      src: "https://res.cloudinary.com/dystdzzi0/image/upload/v1736229238/ManikantaPhoto_2_lxqkn4.jpg",
     },
     {
       quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Lisa Thompson",
-      designation: "VP of Technology at FutureNet",
-      src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "Though new to the team, his rapid learning and passion for frontend development are already inspiring others to push their limits, proving that the drive to grow can make a difference from day one.",
+      name: "Mani Sudheer Yadlapalli",
+      designation: "Frontend Developer at Vithi IT Solutions",
+      src: "https://res.cloudinary.com/dystdzzi0/image/upload/v1736229249/ManisudheeePhoto_orj8iz.jpg",
+    },
+    {
+      quote:
+        "With creativity in her code and passion in her heart, she crafts seamless experiences, proving that a frontend developer isn't just a builder of interfaces but a creator of connections.",
+      name: "Sowmya Boorla",
+      designation: "Frontend Developer at Vithi IT Solutions",
+      src: "https://res.cloudinary.com/dystdzzi0/image/upload/v1736235100/IMG_20240609_192728_biziyx.jpg",
     },
   ];
   return (
-    <body className="">
-
-      {/* Hero Section */}
-      <div className="relative w-full h-[100vh]">
-        <BackgroundGradientAnimation />
-        <div className="absolute top-0 w-full h-[100vh] flex items-center justify-center z-10">
-          <div className="text-white text-center">
-            <HeroBanner />
-          </div>
-        </div>
+    <MainLayout>
+      <div  className="relative w-full h-[100vh] flex items-center justify-center -top-28 z-10 overflow-auto no-scrollbar">
+        <HeroBanner />
       </div>
-      <div className=''>    
-      
+      <div className='h-auto overflow-scroll no-scrollbar'>
+
       <Section
         slides={[
-          { text: "SLIDE ONE" },
-          { text: "SLIDE TWO" },
-          { text: "SLIDE THREE" },
-          { text: "SLIDE FOUR" },
+          { text: <Buttons/> },
+          { text:  <Card/> },
+          { text:   <LoginForm
+            onSubmit={(data) => console.log(data)}
+            externalProviders={[
+              { name: "Google", icon: <FcGoogle />, onClick: handleGoogleLogin },
+              { name: "GitHub", icon: <FaGithub  />, onClick: handleGithubLogin },
+            ]}
+            config={{
+              showGoogle: true,
+              showGithub: true,
+              showForgotPassword: true,
+              showSignUp: true,
+            }}
+            usernameConfig={{
+              label: "Email Address",
+              type: "email",
+            }}
+          />
+           }
+         
         ]}
       />
       </div>
       <div>
-        {/* <AuroraBackground>
-      <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
-      >
-        <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
-          Background lights are cool you know.
-        </div>
-        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-          And this, is chemical burn.
-        </div>
-        <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
-          Debug now
-        </button>
-      </motion.div>
-    </AuroraBackground>  */}
+      <HeroParallaxDemo/>
       </div>
-      <div className="h-[40rem] w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center ">
+      <div className="h-[100vh] w-full  bg-neutral-950 relative flex flex-col items-center justify-center z-50 no-scrollbar">
         <div className="absolute z-10">
           <AnimatedTestimonials testimonials={testimonials} />
         </div>
         <BackgroundBeams />
       </div>
-
-
-
-    </body>
+      <div>
+        <Footer/>
+      </div>
+    </MainLayout>
   );
 }
-// <Layout
-//   title={`${siteConfig.tagline}`}
-//   description="Description will go into a meta tag in <head />"
-// >
-//   {/* <HomepageHeader />
-//   <main>
-//     <HomepageFeatures />
-//   </main> */}
-// </Layout>
