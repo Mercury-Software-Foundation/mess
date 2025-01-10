@@ -59,7 +59,7 @@ This example demonstrates how to use the `Button` component with styles defined 
 
 ```javascript
 <Button
-  styles={clx("$buttonStyles.contained", {
+  styles={Clx("$buttonStyles.contained", {
     base: "padding: $medium;",
     sm: "font-size: 10px; padding:10px 20px;",
     lg: "color: black; border: 2px solid green; background-color: transparent; border-radius: 50px; color: black;",

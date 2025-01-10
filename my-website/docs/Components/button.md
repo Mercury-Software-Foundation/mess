@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-
+<!-- import Highlight from '../../../src//components/text.tsx'; -->
 # Button
 
 ---
@@ -11,7 +11,7 @@ sidebar_position: 1
 The following is an example of how to use the `Button` component from `mess`:
 
 ### Code
-
+<!-- <Highlight/> -->
 ```jsx title="ButtonExample.js"
 import { Button } from 'mess';
 
