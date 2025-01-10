@@ -23,6 +23,70 @@ To use **mess**, you first need to import the semantic tags (Box, Text, Button, 
 ```typescript
 import { Box, Text, Button } from 'mess'
 ```
+
+### Styled Components Tags
+
+The following table lists all the custom tags provided by the library, alongside their corresponding HTML tags.
+
+| Custom Tag       | HTML Tag      |
+|------------------|---------------|
+| `<Button>`       | `<button>`    |
+| `<Text>`         | `<p>`         |
+| `<Image>`        | `<img>`       |
+| `<Box>`          | `<div>`       |
+| `<Input>`        | `<input>`     |
+| `<Label>`        | `<label>`     |
+| `<Ul>`           | `<ul>`        |
+| `<Li>`           | `<li>`        |
+| `<Footer>`       | `<footer>`    |
+| `<Form>`         | `<form>`      |
+| `<Span>`         | `<span>`      |
+| `<A>`            | `<a>`         |
+| `<Select>`       | `<select>`    |
+| `<Option>`       | `<option>`    |
+| `<Header>`       | `<header>`    |
+| `<Main>`         | `<main>`      |
+| `<Article>`      | `<article>`   |
+| `<Section>`      | `<section>`   |
+| `<Aside>`        | `<aside>`     |
+| `<Nav>`          | `<nav>`       |
+| `<H1>`           | `<h1>`        |
+| `<H2>`           | `<h2>`        |
+| `<H3>`           | `<h3>`        |
+| `<H4>`           | `<h4>`        |
+| `<H5>`           | `<h5>`        |
+| `<H6>`           | `<h6>`        |
+| `<Table>`        | `<table>`     |
+| `<Thead>`        | `<thead>`     |
+| `<Tbody>`        | `<tbody>`     |
+| `<Tr>`           | `<tr>`        |
+| `<Th>`           | `<th>`        |
+| `<Td>`           | `<td>`        |
+| `<Pre>`          | `<pre>`       |
+| `<Code>`         | `<code>`      |
+| `<Blockquote>`   | `<blockquote>`|
+| `<Hr>`           | `<hr>`        |
+| `<Br>`           | `<br>`        |
+| `<Progress>`     | `<progress>`  |
+| `<Iframe>`       | `<iframe>`    |
+| `<Canvas>`       | `<canvas>`    |
+| `<Video>`        | `<video>`     |
+| `<Audio>`        | `<audio>`     |
+| `<Figure>`       | `<figure>`    |
+| `<Figcaption>`   | `<figcaption>`|
+| `<Details>`      | `<details>`   |
+| `<Summary>`      | `<summary>`   |
+| `<Mark>`         | `<mark>`      |
+| `<Time>`         | `<time>`      |
+| `<Meter>`        | `<meter>`     |
+| `<B>`            | `<b>`         |
+| `<I>`            | `<i>`         |
+| `<Small>`        | `<small>`     |
+| `<Strong>`       | `<strong>`    |
+| `<Abbr>`         | `<abbr>`      |
+| `<Sub>`          | `<sub>`       |
+| `<Sup>`          | `<sup>`       |
+
 ## Applying CSS with Tags
 
 Once you’ve imported the tags, you can start applying styles directly to these components. The styles are defined using media queries to make them responsive, based on breakpoints defined in your config file.
