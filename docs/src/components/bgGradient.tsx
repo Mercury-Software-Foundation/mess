@@ -11,7 +11,7 @@ export const BackgroundGradientAnimation = ({
   fourthColor = "244, 161, 200", // Updated color
   fifthColor = "109, 127, 171", // Updated color
   pointerColor = "140, 100, 255",
-  size = "80%",
+  size = "100%",
   blendingValue = "hard-light",
   children,
   className,
@@ -63,8 +63,8 @@ export const BackgroundGradientAnimation = ({
       if (!interactiveRef.current) {
         return;
       }
-      setCurX(curX + (tgX - curX) / 20);
-      setCurY(curY + (tgY - curY) / 20);
+      setCurX(curX + (tgX - curX) / 3);
+      setCurY(curY + (tgY - curY) / 3);
       interactiveRef.current.style.transform = `translate(${Math.round(
         curX
       )}px, ${Math.round(curY)}px)`;
@@ -89,7 +89,7 @@ export const BackgroundGradientAnimation = ({
   return (
     <div
       className={cn(
-        "h-[100vh] w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
+        "h-screen w-full fixed overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
         containerClassName
       )}
     >
