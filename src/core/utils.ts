@@ -1,10 +1,9 @@
 import defaultMessConfig from "./defaultConfig";
-import path from "path";
+import * as path from "path";
 import { Breakpoints, MessConfig, Theme } from "./types/mess";
-import fs from "fs";
 
 export const loadConfig = (): MessConfig => {
-  const configPath = fs.existsSync(
+  const configPath = require(
     path.resolve(process.cwd(), "mess.config.ts")
   )
     ? path.resolve(process.cwd(), "mess.config.ts")
