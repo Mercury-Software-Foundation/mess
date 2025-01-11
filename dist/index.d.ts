@@ -3,9 +3,10 @@ import * as react from 'react';
 import * as _emotion_react from '@emotion/react';
 
 interface Styles {
-    base?: string;
-    [key: string]: string | undefined;
+  base?: string;
+  [key: string]: string | undefined;
 }
+
 declare const Mess: (styles: Styles | string, customeclasses?: string) => string;
 /**
  * Dynamically merge styles for specific breakpoints.
@@ -15,7 +16,6 @@ declare const Mess: (styles: Styles | string, customeclasses?: string) => string
  */
 declare const Clx: (baseStyles: Styles | string, overrides: Styles | string) => Styles;
 
-/** @jsxImportSource @emotion/react */
 declare const Button: _emotion_styled.StyledComponent<{
     theme?: _emotion_react.Theme;
     as?: React.ElementType;

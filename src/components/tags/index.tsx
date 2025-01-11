@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import styled from '@emotion/styled';
-import { Mess } from '../molecules/input';
+import { Mess } from '../../core';
 
 export const Button = styled.button(({ styles ,customeclasses}: {styles:any ,customeclasses:any}) => Mess(styles,customeclasses));
 export const Text = styled.p(({ styles ,customeclasses}: {styles:any ,customeclasses:any}) => Mess(styles,customeclasses));
