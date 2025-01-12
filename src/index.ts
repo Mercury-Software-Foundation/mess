@@ -3,6 +3,9 @@ import { Mess, Clx } from "./core";
 import * as tags from "./components/tags";
 export default Mess;
 export { Clx };
+import { MessConfig, Styles, Breakpoint, Breakpoints, Theme } from "./core/types/mess";
+
+export type { MessConfig, Styles, Breakpoint, Breakpoints, Theme };
 export const {
   Button,
   Text,

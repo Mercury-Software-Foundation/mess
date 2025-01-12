@@ -152,9 +152,8 @@ export const Clx = (baseStyles: Styles | string, overrides: Styles | string) => 
   // Handle case when baseStyles is a string
   if (typeof baseStyles === "string") {
     if (baseStyles.startsWith("$")) {
-    const config = loadConfig();
     const themeClasses = config.theme.classes;
-
+    
     // Remove the `$` and resolve the style path
     const stylePath = baseStyles.replace(/^\$|\s+/g, "").split(".");
     let currentLevel: any = themeClasses;

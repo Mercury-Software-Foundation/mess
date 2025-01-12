@@ -2,18 +2,154 @@ import * as _emotion_styled from '@emotion/styled';
 import * as react from 'react';
 import * as _emotion_react from '@emotion/react';
 
+type Breakpoint = {
+  min: string;
+  max?: string;
+};
+
+interface Breakpoints {
+  [key: string]: Breakpoint;
+}
+
+interface Theme {
+  colors?: Record<string, string>;
+  fontSizes?: Record<string, string>;
+  paddings?: Record<string, string>;
+  classes?: Record<string, Record<string, Styles> | Styles>;
+  utilityClasses?: any;
+
+  // New theme keys
+  accentColor?: Record<string, string>;
+  animation?: Record<string, string>;
+  aria?: Record<string, string>;
+  aspectRatio?: Record<string, string>;
+  backdropBlur?: Record<string, string>;
+  backdropBrightness?: Record<string, string>;
+  backdropContrast?: Record<string, string>;
+  backdropGrayscale?: Record<string, string>;
+  backdropHueRotate?: Record<string, string>;
+  backdropInvert?: Record<string, string>;
+  backdropOpacity?: Record<string, string>;
+  backdropSaturate?: Record<string, string>;
+  backdropSepia?: Record<string, string>;
+  backgroundColor?: Record<string, string>;
+  backgroundImage?: Record<string, string>;
+  backgroundOpacity?: Record<string, string>;
+  backgroundPosition?: Record<string, string>;
+  backgroundSize?: Record<string, string>;
+  blur?: Record<string, string>;
+  borderColor?: Record<string, string>;
+  borderOpacity?: Record<string, string>;
+  borderRadius?: Record<string, string>;
+  borderSpacing?: Record<string, string>;
+  borderWidth?: Record<string, string>;
+  boxShadow?: Record<string, string>;
+  boxShadowColor?: Record<string, string>;
+  brightness?: Record<string, string>;
+  caretColor?: Record<string, string>;
+  columns?: Record<string, string>;
+  container?: Record<string, string>;
+  content?: Record<string, string>;
+  contrast?: Record<string, string>;
+  cursor?: Record<string, string>;
+  divideColor?: Record<string, string>;
+  divideOpacity?: Record<string, string>;
+  divideWidth?: Record<string, string>;
+  dropShadow?: Record<string, string>;
+  fill?: Record<string, string>;
+  flex?: Record<string, string>;
+  flexBasis?: Record<string, string>;
+  flexGrow?: Record<string, string>;
+  flexShrink?: Record<string, string>;
+  fontFamily?: Record<string, string>;
+  fontSize?: Record<string, string>;
+  fontWeight?: Record<string, string>;
+  gap?: Record<string, string>;
+  gradientColorStops?: Record<string, string>;
+  gradientColorStopPositions?: Record<string, string>;
+  grayscale?: Record<string, string>;
+  gridAutoColumns?: Record<string, string>;
+  gridAutoRows?: Record<string, string>;
+  gridColumn?: Record<string, string>;
+  gridColumnEnd?: Record<string, string>;
+  gridColumnStart?: Record<string, string>;
+  gridRow?: Record<string, string>;
+  gridRowEnd?: Record<string, string>;
+  gridRowStart?: Record<string, string>;
+  gridTemplateColumns?: Record<string, string>;
+  gridTemplateRows?: Record<string, string>;
+  height?: Record<string, string>;
+  hueRotate?: Record<string, string>;
+  inset?: Record<string, string>;
+  invert?: Record<string, string>;
+  keyframes?: Record<string, string>;
+  letterSpacing?: Record<string, string>;
+  lineHeight?: Record<string, string>;
+  listStyleType?: Record<string, string>;
+  listStyleImage?: Record<string, string>;
+  margin?: Record<string, string>;
+  lineClamp?: Record<string, string>;
+  maxHeight?: Record<string, string>;
+  maxWidth?: Record<string, string>;
+  minHeight?: Record<string, string>;
+  minWidth?: Record<string, string>;
+  objectPosition?: Record<string, string>;
+  opacity?: Record<string, string>;
+  order?: Record<string, string>;
+  outlineColor?: Record<string, string>;
+  outlineOffset?: Record<string, string>;
+  outlineWidth?: Record<string, string>;
+  padding?: Record<string, string>;
+  placeholderColor?: Record<string, string>;
+  placeholderOpacity?: Record<string, string>;
+  ringColor?: Record<string, string>;
+  ringOffsetColor?: Record<string, string>;
+  ringOffsetWidth?: Record<string, string>;
+  ringOpacity?: Record<string, string>;
+  ringWidth?: Record<string, string>;
+  rotate?: Record<string, string>;
+  saturate?: Record<string, string>;
+  scale?: Record<string, string>;
+  screens?: Record<string, string>;
+  scrollMargin?: Record<string, string>;
+  scrollPadding?: Record<string, string>;
+  sepia?: Record<string, string>;
+  skew?: Record<string, string>;
+  space?: Record<string, string>;
+  spacing?: Record<string, string>;
+  stroke?: Record<string, string>;
+  strokeWidth?: Record<string, string>;
+  supports?: Record<string, string>;
+  data?: Record<string, string>;
+  textColor?: Record<string, string>;
+  textDecorationColor?: Record<string, string>;
+  textDecorationThickness?: Record<string, string>;
+  textIndent?: Record<string, string>;
+  textOpacity?: Record<string, string>;
+  textUnderlineOffset?: Record<string, string>;
+  transformOrigin?: Record<string, string>;
+  transitionDelay?: Record<string, string>;
+  transitionDuration?: Record<string, string>;
+  transitionProperty?: Record<string, string>;
+  transitionTimingFunction?: Record<string, string>;
+  translate?: Record<string, string>;
+  size?: Record<string, string>;
+  width?: Record<string, string>;
+  willChange?: Record<string, string>;
+  zIndex?: Record<string, string>;
+}
+
 interface Styles {
   base?: string;
   [key: string]: string | undefined;
 }
 
+interface MessConfig extends Record<string, any> {
+  breakpoints?: Breakpoints;
+  theme: Theme;
+}
+
 declare const Mess: (styles: Styles | string, customeclasses?: string) => string;
-/**
- * Dynamically merge styles for specific breakpoints.
- * @param baseStyles - The base styles object (e.g., theme styles).
- * @param overrides - The overrides object with custom styles.
- * @returns Merged styles object.
- */
 declare const Clx: (baseStyles: Styles | string, overrides: Styles | string) => Styles;
 
 declare const Button: _emotion_styled.StyledComponent<{
@@ -409,4 +545,4 @@ declare const Sup: _emotion_styled.StyledComponent<{
     customeclasses: any;
 }, react.DetailedHTMLProps<react.HTMLAttributes<HTMLElement>, HTMLElement>, {}>;
 
-export { A, Abbr, Article, Aside, Audio, B, Blockquote, Box, Br, Button, Canvas, Clx, Code, Details, Figcaption, Figure, Footer, Form, H1, H2, H3, H4, H5, H6, Header, Hr, I, Iframe, Image, Input, Label, Li, Main, Mark, Meter, Nav, Option, Pre, Progress, Section, Select, Small, Span, Strong, Sub, Summary, Sup, Table, Tbody, Td, Text, Th, Thead, Time, Tr, Ul, Video, Mess as default };
+export { A, Abbr, Article, Aside, Audio, B, Blockquote, Box, Br, type Breakpoint, type Breakpoints, Button, Canvas, Clx, Code, Details, Figcaption, Figure, Footer, Form, H1, H2, H3, H4, H5, H6, Header, Hr, I, Iframe, Image, Input, Label, Li, Main, Mark, type MessConfig, Meter, Nav, Option, Pre, Progress, Section, Select, Small, Span, Strong, type Styles, Sub, Summary, Sup, Table, Tbody, Td, Text, Th, Thead, type Theme, Time, Tr, Ul, Video, Mess as default };

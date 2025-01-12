@@ -11,7 +11,7 @@ export interface Theme {
   colors?: Record<string, string>;
   fontSizes?: Record<string, string>;
   paddings?: Record<string, string>;
-  classes?: Record<string, Record<string, Record<string, string>>>;
+  classes?: Record<string, Record<string, Styles> | Styles>;
   utilityClasses?: any;
 
   // New theme keys
