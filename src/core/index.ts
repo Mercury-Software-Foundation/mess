@@ -1,23 +1,19 @@
 import { Breakpoints, Styles, StylesMessInternal, Theme } from "./types/mess.d";
 import { loadConfig } from "./utils";
 import { generateFormattedCssString, generateStyles } from "./messUtils";
-import { CSSObject } from "@emotion/react";
+import { css } from "@emotion/react";
+import {css as cssClassString} from "@emotion/css";
 
 export const Mess = (
   stylesCssObject: Styles | string,
-  customeclasses?: string
+  customeclasses?: string,
+  usingClasses: boolean = false
 ): string => {
     
     const styles: StylesMessInternal | string = typeof stylesCssObject == "string" ? stylesCssObject : Object.fromEntries(
         Object.keys(stylesCssObject).map((item) => [
             item, 
-            JSON.stringify(stylesCssObject[item])
-                .replace("{", "")
-                .replace("}", "")
-                .replaceAll(",", ";")
-                .replaceAll('"', '')
-                .concat(';')
-                .replaceAll(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+            css(stylesCssObject[item]).styles
         ]) 
     );
   const config = loadConfig();
@@ -134,7 +130,8 @@ export const Mess = (
     // console.log(token,"token")
     return token; // Return the token itself if no match is found
   });
-  return cssString;
+  
+  return !usingClasses ? cssString : cssClassString`${cssString}`;
 };
 
 export const Clx = (
@@ -147,13 +144,7 @@ export const Clx = (
     const baseStyle: StylesMessInternal | string= typeof baseStyleCssObj == "string" ? baseStyleCssObj : Object.fromEntries(
         Object.keys(baseStyleCssObj).map((item) => [
             item, 
-            JSON.stringify(baseStyleCssObj[item])
-                .replace("{", "")
-                .replace("}", "")
-                .replaceAll(",", ";")
-                .replaceAll('"', '')
-                .concat(';')
-                .replaceAll(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+            css(baseStyleCssObj[item]).styles
         ]) 
     );
     // Handle case when baseStyle is a string
