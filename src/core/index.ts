@@ -9,12 +9,15 @@ export interface MessObject {
   customeclasses?: string;
   usingClasses?: boolean;
 }
-export const Mess = (messCssConfig: MessObject): string => {
-  const {
-    styles,
-    customeclasses,
-    usingClasses = true
-  } = messCssConfig;
+export const Mess = (    styles: Styles | string | StylesMessInternal,
+  customeclasses: string = '',
+  usingClasses: boolean = true,
+): string => {
+  // const {
+  //   styles,
+  //   customeclasses,
+  //   usingClasses = true
+  // } = messCssConfig;
 
   const stylesCssObject: StylesMessInternal | string =
     typeof styles == "string"
@@ -143,7 +146,7 @@ export const Mess = (messCssConfig: MessObject): string => {
   return !usingClasses ? cssString : cssClassString`${cssString}`;
 };
 
-export const Clx = (...baseStyles: (Styles | string)[]) => {
+export const Clx = (...baseStyles: (Styles | string | StylesMessInternal)[]) => {
   const config = loadConfig();
   const mergedStyles: StylesMessInternal = {};
 
