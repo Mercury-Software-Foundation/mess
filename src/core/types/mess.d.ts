@@ -1,3 +1,5 @@
+import { CSSObject } from "@emotion/react";
+
 export type Breakpoint = {
   min: string;
   max?: string;
@@ -136,10 +138,14 @@ export interface Theme {
 }
 
 export interface Styles {
+  base?: CSSObject;
+  [key: string]: CSSObject | undefined;
+}
+
+export interface StylesMessInternal {
   base?: string;
   [key: string]: string | undefined;
 }
-
 export interface MessConfig extends Record<string, any> {
   breakpoints?: Breakpoints;
   theme: Theme;

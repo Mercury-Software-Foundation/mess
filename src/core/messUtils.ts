@@ -1,5 +1,5 @@
 import { cssClassMapping } from "./constant";
-import { Breakpoints, MessConfig, Styles, Theme } from "./types/mess";
+import { Breakpoints, MessConfig, StylesMessInternal, Theme } from "./types/mess";
 
 type CssClassKeys = keyof typeof cssClassMapping;
 
@@ -8,7 +8,7 @@ export const generateStyles = (
   breakpoints: Breakpoints,
   theme: Theme
 ) => {
-  let styles: Styles = { base: "" };
+  let styles: StylesMessInternal = { base: "" };
 
   const classes = customClasses.split(" ");
 
@@ -64,7 +64,7 @@ const getCssPropertyValue = (cssProperty: string | string[], value: string) => {
 };
 
 export const generateFormattedCssString = (
-  userStyles: Styles | string,
+  userStyles: StylesMessInternal | string,
   config: MessConfig
 ) => {
   let resolvedBaseStyles;
@@ -88,7 +88,7 @@ export const generateFormattedCssString = (
         }
       }
 
-      resolvedBaseStyles = currentLevel as Styles;
+      resolvedBaseStyles = currentLevel as StylesMessInternal;
     } else {
       resolvedBaseStyles = generateStyles(
         userStyles,

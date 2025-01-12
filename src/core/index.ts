@@ -1,18 +1,29 @@
-import { Breakpoints, Styles, Theme } from "./types/mess.d";
-
-import { clx } from "@medusajs/ui";
+import { Breakpoints, Styles, StylesMessInternal, Theme } from "./types/mess.d";
 import { loadConfig } from "./utils";
 import { generateFormattedCssString, generateStyles } from "./messUtils";
+import { CSSObject } from "@emotion/react";
 
 export const Mess = (
-  styles: Styles | string,
+  stylesCssObject: Styles | string,
   customeclasses?: string
 ): string => {
-  // console.log(customeclasses, "customeclass");
+    
+    const styles: StylesMessInternal | string = typeof stylesCssObject == "string" ? stylesCssObject : Object.fromEntries(
+        Object.keys(stylesCssObject).map((item) => [
+            item, 
+            JSON.stringify(stylesCssObject[item])
+                .replace("{", "")
+                .replace("}", "")
+                .replaceAll(",", ";")
+                .replaceAll('"', '')
+                .concat(';')
+                .replaceAll(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+        ]) 
+    );
   const config = loadConfig();
   const breakpoints: Breakpoints = config.breakpoints || {};
   const theme: Theme = config.theme;
-  let resolvedStyles: Styles = {};
+  let resolvedStyles: StylesMessInternal = {};
   // If styles is a string, resolve it from config.theme.classes
   if (typeof styles === "string") {
     const stylePath = styles.replace(/^\$|\s+/g, "").split(".");
@@ -32,7 +43,7 @@ export const Mess = (
       }
     }
 
-    resolvedStyles = currentLevel as Styles;
+    resolvedStyles = currentLevel as StylesMessInternal;
   } else if (typeof styles === "object") {
     resolvedStyles = styles;
   }
@@ -123,7 +134,6 @@ export const Mess = (
     // console.log(token,"token")
     return token; // Return the token itself if no match is found
   });
-
   return cssString;
 };
 
@@ -131,11 +141,23 @@ export const Clx = (
   ...baseStyles: (Styles | string)[]
 ) => {
   const config = loadConfig();
-  const mergedStyles: Styles = {};
+  const mergedStyles: StylesMessInternal = {};
 
-  for (const baseStyle of baseStyles) {
+  for (const baseStyleCssObj of baseStyles) {
+    const baseStyle: StylesMessInternal | string= typeof baseStyleCssObj == "string" ? baseStyleCssObj : Object.fromEntries(
+        Object.keys(baseStyleCssObj).map((item) => [
+            item, 
+            JSON.stringify(baseStyleCssObj[item])
+                .replace("{", "")
+                .replace("}", "")
+                .replaceAll(",", ";")
+                .replaceAll('"', '')
+                .concat(';')
+                .replaceAll(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+        ]) 
+    );
     // Handle case when baseStyle is a string
-    const resolvedBaseStyles: Styles = generateFormattedCssString(
+    const resolvedBaseStyles: StylesMessInternal = generateFormattedCssString(
       baseStyle,
       config
     );

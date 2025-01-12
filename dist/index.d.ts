@@ -1,6 +1,7 @@
 import * as _emotion_styled from '@emotion/styled';
 import * as react from 'react';
 import * as _emotion_react from '@emotion/react';
+import { CSSObject } from '@emotion/react';
 
 type Breakpoint = {
   min: string;
@@ -140,17 +141,21 @@ interface Theme {
 }
 
 interface Styles {
+  base?: CSSObject;
+  [key: string]: CSSObject | undefined;
+}
+
+interface StylesMessInternal {
   base?: string;
   [key: string]: string | undefined;
 }
-
 interface MessConfig extends Record<string, any> {
   breakpoints?: Breakpoints;
   theme: Theme;
 }
 
-declare const Mess: (styles: Styles | string, customeclasses?: string) => string;
-declare const Clx: (...baseStyles: (Styles | string)[]) => Styles;
+declare const Mess: (stylesCssObject: Styles | string, customeclasses?: string) => string;
+declare const Clx: (...baseStyles: (Styles | string)[]) => StylesMessInternal;
 
 declare const Button: _emotion_styled.StyledComponent<{
     theme?: _emotion_react.Theme;
