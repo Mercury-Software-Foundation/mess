@@ -40,9 +40,8 @@ export const Mess = (
   let cssString = resolvedStyles?.base ?? "";
 
   if (customeclasses) {
-    resolvedStyles= generateStyles(customeclasses,breakpoints, theme)
-    cssString =resolvedStyles?.base ?? ""
-
+    resolvedStyles = generateStyles(customeclasses, breakpoints, theme);
+    cssString = resolvedStyles?.base ?? "";
   }
   if (breakpoints && resolvedStyles) {
     Object.entries(breakpoints).forEach(([key, value]) => {
@@ -50,21 +49,18 @@ export const Mess = (
       if (styleForKey && value.min) {
         cssString += `
           @media (min-width: ${value.min}) {
-            ${styleForKey.replace(
-              /\$([a-zA-Z]+)/g,
-              (_, token) => {
-                // Iterate over all theme keys to find the token in any of the theme properties
-                for (const key in theme) {
+            ${styleForKey.replace(/\$([a-zA-Z]+)/g, (_, token) => {
+              // Iterate over all theme keys to find the token in any of the theme properties
+              for (const key in theme) {
+                //@ts-ignore
+                if (theme[key]?.[token]) {
                   //@ts-ignore
-                  if (theme[key]?.[token]) {
-                  //@ts-ignore
-          
-                    return theme[key][token];
-                  }
+
+                  return theme[key][token];
                 }
-                return token; // Return the token itself if no match is found
               }
-            )}
+              return token; // Return the token itself if no match is found
+            })}
           }
         `;
       }
@@ -75,21 +71,18 @@ export const Mess = (
       if (key === "base") {
         cssString += `
           @media (prefers-color-scheme: dark) {
-            ${style.replace(
-              /\$([a-zA-Z]+)/g,
-              (_, token) => {
-                // Iterate over all theme keys to find the token in any of the theme properties
-                for (const key in theme) {
+            ${style.replace(/\$([a-zA-Z]+)/g, (_, token) => {
+              // Iterate over all theme keys to find the token in any of the theme properties
+              for (const key in theme) {
+                //@ts-ignore
+                if (theme[key]?.[token]) {
                   //@ts-ignore
-                  if (theme[key]?.[token]) {
-                  //@ts-ignore
-          
-                    return theme[key][token];
-                  }
+
+                  return theme[key][token];
                 }
-                return token; // Return the token itself if no match is found
               }
-            )}
+              return token; // Return the token itself if no match is found
+            })}
           }
         `;
       } else if (breakpoints[key]) {
@@ -97,21 +90,18 @@ export const Mess = (
           @media (prefers-color-scheme: dark) and (min-width: ${
             breakpoints[key].min
           }) {
-            ${style.replace(
-              /\$([a-zA-Z]+)/g,
-              (_, token) => {
-                // Iterate over all theme keys to find the token in any of the theme properties
-                for (const key in theme) {
+            ${style.replace(/\$([a-zA-Z]+)/g, (_, token) => {
+              // Iterate over all theme keys to find the token in any of the theme properties
+              for (const key in theme) {
+                //@ts-ignore
+                if (theme[key]?.[token]) {
                   //@ts-ignore
-                  if (theme[key]?.[token]) {
-                  //@ts-ignore
-          
-                    return theme[key][token];
-                  }
+
+                  return theme[key][token];
                 }
-                return token; // Return the token itself if no match is found
               }
-            )}
+              return token; // Return the token itself if no match is found
+            })}
           }
         `;
       }
@@ -119,43 +109,46 @@ export const Mess = (
   }
 
   // Replace tokens in base styles
-  cssString = cssString.replace(
-    /\$([a-zA-Z]+)/g,
-    (_, token) => {
-      // Iterate over all theme keys to find the token in any of the theme properties
-      for (const key in theme) {
-        // console.log(key,token,"key token")
-        //@ts-ignore
-        if (theme[key]?.[token]) {
+  cssString = cssString.replace(/\$([a-zA-Z]+)/g, (_, token) => {
+    // Iterate over all theme keys to find the token in any of the theme properties
+    for (const key in theme) {
+      // console.log(key,token,"key token")
+      //@ts-ignore
+      if (theme[key]?.[token]) {
         //@ts-ignore
 
-          return theme[key][token];
-        }
+        return theme[key][token];
       }
-      // console.log(token,"token")
-      return token; // Return the token itself if no match is found
     }
-  );
+    // console.log(token,"token")
+    return token; // Return the token itself if no match is found
+  });
 
   return cssString;
 };
 
-export const Clx = (baseStyles: Styles | string, overrides: Styles | string) => {
+export const Clx = (
+  baseStyles: Styles | string,
+  overrides: Styles | string
+) => {
   const config = loadConfig();
   // Handle case when baseStyles is a string
-  let resolvedBaseStyles: Styles = generateFormattedCssString(baseStyles, config)
+  let resolvedBaseStyles: Styles = generateFormattedCssString(
+    baseStyles,
+    config
+  );
   // Handle case when overrides is a string
-  let resolvedOverrides: Styles = generateFormattedCssString(overrides, config)
+  let resolvedOverrides: Styles = generateFormattedCssString(overrides, config);
   // Start merging the resolved base styles with overrides
   const mergedStyles: Styles = { ...resolvedBaseStyles };
   // Merge styles
   for (const key in resolvedOverrides) {
     if (resolvedBaseStyles[key]) {
-        const existingStyles = mergedStyles[key]?.split(";") || [];
-        const newStyles = resolvedOverrides[key]?.split(";") || [];
-        mergedStyles[key] = [
-          ...new Set([...existingStyles, ...newStyles]),
-        ].join(";");
+      const existingStyles = mergedStyles[key]?.split(";") || [];
+      const newStyles = resolvedOverrides[key]?.split(";") || [];
+      mergedStyles[key] = [...new Set([...existingStyles, ...newStyles])].join(
+        ";"
+      );
     } else {
       mergedStyles[key] = resolvedOverrides[key];
     }
