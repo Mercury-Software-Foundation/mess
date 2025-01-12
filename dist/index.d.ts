@@ -150,7 +150,7 @@ interface MessConfig extends Record<string, any> {
 }
 
 declare const Mess: (styles: Styles | string, customeclasses?: string) => string;
-declare const Clx: (baseStyles: Styles | string, overrides: Styles | string) => Styles;
+declare const Clx: (...baseStyles: (Styles | string)[]) => Styles;
 
 declare const Button: _emotion_styled.StyledComponent<{
     theme?: _emotion_react.Theme;

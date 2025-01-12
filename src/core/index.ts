@@ -128,29 +128,25 @@ export const Mess = (
 };
 
 export const Clx = (
-  baseStyles: Styles | string,
-  overrides: Styles | string
+  ...baseStyles: (Styles | string)[]
 ) => {
   const config = loadConfig();
-  // Handle case when baseStyles is a string
-  let resolvedBaseStyles: Styles = generateFormattedCssString(
-    baseStyles,
-    config
-  );
-  // Handle case when overrides is a string
-  let resolvedOverrides: Styles = generateFormattedCssString(overrides, config);
-  // Start merging the resolved base styles with overrides
-  const mergedStyles: Styles = { ...resolvedBaseStyles };
-  // Merge styles
-  for (const key in resolvedOverrides) {
-    if (resolvedBaseStyles[key]) {
+  const mergedStyles: Styles = {};
+
+  for (const baseStyle of baseStyles) {
+    // Handle case when baseStyle is a string
+    const resolvedBaseStyles: Styles = generateFormattedCssString(
+      baseStyle,
+      config
+    );
+
+    // Merge styles
+    for (const key in resolvedBaseStyles) {
       const existingStyles = mergedStyles[key]?.split(";") || [];
-      const newStyles = resolvedOverrides[key]?.split(";") || [];
+      const newStyles = resolvedBaseStyles[key]?.split(";") || [];
       mergedStyles[key] = [...new Set([...existingStyles, ...newStyles])].join(
         ";"
       );
-    } else {
-      mergedStyles[key] = resolvedOverrides[key];
     }
   }
   return mergedStyles;

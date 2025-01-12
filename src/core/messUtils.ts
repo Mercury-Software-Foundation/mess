@@ -25,14 +25,7 @@ export const generateStyles = (
       const cssProperty = cssClassMapping[property as CssClassKeys];
 
       if (cssProperty) {
-        const cssString: string =
-          typeof cssProperty === "string"
-            ? `${cssProperty}: ${value}; `
-            : cssProperty.reduce(
-                (item, acc) => `${item}: ${value}; ` + acc,
-                ""
-              );
-        styles.base += cssString;
+        styles.base += getCssPropertyValue(cssProperty, value);
       }
     }
 
@@ -51,21 +44,29 @@ export const generateStyles = (
         if (!styles[breakpoint]) {
           styles[breakpoint] = "";
         }
-        const cssString: string =
-          typeof cssProperty === "string"
-            ? `${cssProperty}: ${value}; `
-            : cssProperty.reduce(
-                (item, acc) => `${item}: ${value}; ` + acc,
-                ""
-              );
-        styles.base += cssString;
+        styles.base += getCssPropertyValue(cssProperty, value);
       }
     }
   }
   return styles;
 };
 
-export const generateFormattedCssString = (userStyles: Styles | string, config: MessConfig) => {
+const getCssPropertyValue = (cssProperty: string | string[], value: string) => {
+  return typeof cssProperty === "string"
+    ? `${cssProperty}: ${value}; `
+    : (() => {
+        let arrayClassesResolved = "";
+        cssProperty.forEach(
+          (item) => (arrayClassesResolved += `${item}: ${value}; `)
+        );
+        return arrayClassesResolved;
+      })();
+};
+
+export const generateFormattedCssString = (
+  userStyles: Styles | string,
+  config: MessConfig
+) => {
   let resolvedBaseStyles;
   if (typeof userStyles === "string") {
     if (userStyles.startsWith("$")) {
@@ -89,7 +90,11 @@ export const generateFormattedCssString = (userStyles: Styles | string, config: 
 
       resolvedBaseStyles = currentLevel as Styles;
     } else {
-      resolvedBaseStyles = generateStyles(userStyles, config.breakpoints || {}, config.theme);
+      resolvedBaseStyles = generateStyles(
+        userStyles,
+        config.breakpoints || {},
+        config.theme
+      );
     }
   } else {
     resolvedBaseStyles = userStyles;
