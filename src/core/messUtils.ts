@@ -44,7 +44,7 @@ export const generateStyles = (
         if (!styles[breakpoint]) {
           styles[breakpoint] = "";
         }
-        styles.base += getCssPropertyValue(cssProperty, value);
+        styles[breakpoint] += getCssPropertyValue(cssProperty, value);
       }
     }
   }

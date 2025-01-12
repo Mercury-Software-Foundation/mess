@@ -3,19 +3,15 @@ import path from 'path';
 
 const __dirName = process.env.INIT_CWD || '';
 
-const configContentTs = `import { MessConfig } from "@mercury-js/mess";
-const messConfig: MessConfig = {
-  theme: {},
+const configContentTs = `module.exports = {
+theme:{}
 };
-export default messConfig;
 `;
 
 const configContentJs = `
-const messConfig = {
-  theme: {},
-};
-export default messConfig;
-`;
+module.exports = {
+theme:{}
+};`;
 
 const isTsFile = path.resolve(__dirName, 'tsconfig.json');
 
