@@ -2,27 +2,36 @@ import { Breakpoints, Styles, StylesMessInternal, Theme } from "./types/mess.d";
 import { loadConfig } from "./utils";
 import { generateFormattedCssString, generateStyles } from "./messUtils";
 import { css } from "@emotion/react";
-import {css as cssClassString} from "@emotion/css";
+import { css as cssClassString } from "@emotion/css";
 
-export const Mess = (
-  stylesCssObject: Styles | string,
-  customeclasses?: string,
-  usingClasses: boolean = false
-): string => {
-    
-    const styles: StylesMessInternal | string = typeof stylesCssObject == "string" ? stylesCssObject : Object.fromEntries(
-        Object.keys(stylesCssObject).map((item) => [
-            item, 
-            css(stylesCssObject[item]).styles
-        ]) 
-    );
+export interface MessObject {
+  styles: Styles | string;
+  customeclasses?: string;
+  usingClasses?: boolean;
+}
+export const Mess = (messCssConfig: MessObject): string => {
+  const {
+    styles,
+    customeclasses,
+    usingClasses = true
+  } = messCssConfig;
+
+  const stylesCssObject: StylesMessInternal | string =
+    typeof styles == "string"
+      ? styles
+      : Object.fromEntries(
+          Object.keys(styles).map((item) => [
+            item,
+            css(styles[item]).styles,
+          ])
+        );
   const config = loadConfig();
   const breakpoints: Breakpoints = config.breakpoints || {};
   const theme: Theme = config.theme;
   let resolvedStyles: StylesMessInternal = {};
   // If styles is a string, resolve it from config.theme.classes
-  if (typeof styles === "string") {
-    const stylePath = styles.replace(/^\$|\s+/g, "").split(".");
+  if (typeof stylesCssObject === "string") {
+    const stylePath = stylesCssObject.replace(/^\$|\s+/g, "").split(".");
     let currentLevel: any = theme.classes;
     // console.log(stylePath,currentLevel,"stylepath,currentLevel")
     for (const key of stylePath) {
@@ -32,7 +41,7 @@ export const Mess = (
         currentLevel = currentLevel[key];
       } else {
         console.error(
-          `Invalid style path: '${styles}'. Key '${key}' not found.`
+          `Invalid style path: '${stylesCssObject}'. Key '${key}' not found.`
         );
         currentLevel = {};
         break;
@@ -40,8 +49,8 @@ export const Mess = (
     }
 
     resolvedStyles = currentLevel as StylesMessInternal;
-  } else if (typeof styles === "object") {
-    resolvedStyles = styles;
+  } else if (typeof stylesCssObject === "object") {
+    resolvedStyles = stylesCssObject;
   }
 
   let cssString = resolvedStyles?.base ?? "";
@@ -115,7 +124,7 @@ export const Mess = (
     });
   }
 
-  // Replace tokens in base styles
+  // Replace tokens in base stylesCssObject
   cssString = cssString.replace(/\$([a-zA-Z]+)/g, (_, token) => {
     // Iterate over all theme keys to find the token in any of the theme properties
     for (const key in theme) {
@@ -130,30 +139,31 @@ export const Mess = (
     // console.log(token,"token")
     return token; // Return the token itself if no match is found
   });
-  
+
   return !usingClasses ? cssString : cssClassString`${cssString}`;
 };
 
-export const Clx = (
-  ...baseStyles: (Styles | string)[]
-) => {
+export const Clx = (...baseStyles: (Styles | string)[]) => {
   const config = loadConfig();
   const mergedStyles: StylesMessInternal = {};
 
   for (const baseStyleCssObj of baseStyles) {
-    const baseStyle: StylesMessInternal | string= typeof baseStyleCssObj == "string" ? baseStyleCssObj : Object.fromEntries(
-        Object.keys(baseStyleCssObj).map((item) => [
-            item, 
-            css(baseStyleCssObj[item]).styles
-        ]) 
-    );
+    const baseStyle: StylesMessInternal | string =
+      typeof baseStyleCssObj == "string"
+        ? baseStyleCssObj
+        : Object.fromEntries(
+            Object.keys(baseStyleCssObj).map((item) => [
+              item,
+              css(baseStyleCssObj[item]).styles,
+            ])
+          );
     // Handle case when baseStyle is a string
     const resolvedBaseStyles: StylesMessInternal = generateFormattedCssString(
       baseStyle,
       config
     );
 
-    // Merge styles
+    // Merge stylesCssObject
     for (const key in resolvedBaseStyles) {
       const existingStyles = mergedStyles[key]?.split(";") || [];
       const newStyles = resolvedBaseStyles[key]?.split(";") || [];
