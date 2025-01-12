@@ -154,7 +154,12 @@ interface MessConfig extends Record<string, any> {
   theme: Theme;
 }
 
-declare const Mess: (stylesCssObject: Styles | string, customeclasses?: string, usingClasses?: boolean) => string;
+interface MessObject {
+    styles: Styles | string;
+    customeclasses?: string;
+    usingClasses?: boolean;
+}
+declare const Mess: (messCssConfig: MessObject) => string;
 declare const Clx: (...baseStyles: (Styles | string)[]) => StylesMessInternal;
 
 declare const Button: _emotion_styled.StyledComponent<{
