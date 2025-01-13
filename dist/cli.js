@@ -1,2 +1,0 @@
-#!/usr/bin/env node
-"use strict";var e,s=require("fs"),n=require("path"),o=process.env.INIT_CWD||"",t=n.resolve(o,"tsconfig.json");e=s.existsSync(t)?n.resolve(o,"mess.config.ts"):n.resolve(o,"mess.config.js"),s.existsSync(e)?console.log("".concat(n.basename(e)," already exists in the root directory.")):(s.existsSync(t)?s.writeFileSync(e,"module.exports = {\ntheme:{}\n};\n","utf8"):s.writeFileSync(e,"\nmodule.exports = {\ntheme:{}\n};","utf8"),console.log("".concat(n.basename(e)," has been created successfully.")));
