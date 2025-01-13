@@ -5,28 +5,21 @@ import { css } from "@emotion/react";
 import { css as cssClassString } from "@emotion/css";
 
 export interface MessObject {
-  styles: Styles | string;
+  styles: Styles | string | StylesMessInternal;
   customeclasses?: string;
   usingClasses?: boolean;
 }
-export const Mess = (    styles: Styles | string | StylesMessInternal,
-  customeclasses: string = '',
-  usingClasses: boolean = true,
-): string => {
-  // const {
-  //   styles,
-  //   customeclasses,
-  //   usingClasses = true
-  // } = messCssConfig;
+export const Mess = ({
+  styles,
+  customeclasses = "",
+  usingClasses = true,
+}: MessObject): string => {
 
   const stylesCssObject: StylesMessInternal | string =
     typeof styles == "string"
       ? styles
       : Object.fromEntries(
-          Object.keys(styles).map((item) => [
-            item,
-            css(styles[item]).styles,
-          ])
+          Object.keys(styles).map((item) => [item, css(styles[item]).styles])
         );
   const config = loadConfig();
   const breakpoints: Breakpoints = config.breakpoints || {};
@@ -146,7 +139,9 @@ export const Mess = (    styles: Styles | string | StylesMessInternal,
   return !usingClasses ? cssString : cssClassString`${cssString}`;
 };
 
-export const Clx = (...baseStyles: (Styles | string | StylesMessInternal)[]) => {
+export const Clx = (
+  ...baseStyles: (Styles | string | StylesMessInternal)[]
+) => {
   const config = loadConfig();
   const mergedStyles: StylesMessInternal = {};
 
@@ -166,14 +161,14 @@ export const Clx = (...baseStyles: (Styles | string | StylesMessInternal)[]) => 
       config
     );
 
+
     // Merge stylesCssObject
     for (const key in resolvedBaseStyles) {
-      const existingStyles = mergedStyles[key]?.split(";") || [];
-      const newStyles = resolvedBaseStyles[key]?.split(";") || [];
-      mergedStyles[key] = [...new Set([...existingStyles, ...newStyles])].join(
-        ";"
-      );
+      const existingStyles = mergedStyles[key];
+      const newStyles = resolvedBaseStyles[key];
+      mergedStyles[key] = css(existingStyles, newStyles).styles;
     }
   }
+  
   return mergedStyles;
 };

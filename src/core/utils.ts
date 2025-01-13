@@ -6,11 +6,11 @@ export const loadConfig = (): MessConfig => {
   let defaultBreakpoints = defaultMessConfig.breakpoints || {};
   let defaultTheme = defaultMessConfig.theme;
   try {
-    const configPath = path.resolve(process.cwd(), "mess.config.ts")
-      ? path.resolve(process.cwd(), "mess.config.ts")
-      : path.resolve(process.cwd(), "mess.config.js");
+    // const configPath = path.resolve(process.cwd(), "tsconfig.json")
+    //   ? path.resolve(process.cwd(), "mess.config.ts")
+    //   : path.resolve(process.cwd(), "mess.config.js");
 
-      // const configPath = path.resolve(process.cwd(), "mess.config.js")
+      const configPath = path.resolve(process.cwd(), "mess.config.js")
     console.log(configPath,"configPathconfigPath")
     // Clear the require cache to ensure the latest changes are picked up
     delete require.cache[require.resolve(configPath)];
