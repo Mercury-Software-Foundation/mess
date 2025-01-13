@@ -5,12 +5,12 @@ import { css } from "@emotion/react";
 import { css as cssClassString } from "@emotion/css";
 
 export interface MessObject {
-  styles: Styles | string | StylesMessInternal;
+  styles?: Styles | string | StylesMessInternal;
   customeclasses?: string;
   usingClasses?: boolean;
 }
 export const Mess = ({
-  styles,
+  styles={},
   customeclasses = "",
   usingClasses = true,
 }: MessObject): string => {

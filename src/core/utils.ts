@@ -6,15 +6,23 @@ export const loadConfig = (): MessConfig => {
   let defaultBreakpoints = defaultMessConfig.breakpoints || {};
   let defaultTheme = defaultMessConfig.theme;
   try {
-    // const configPath = path.resolve(process.cwd(), "tsconfig.json")
+    // const configPath = path.resolve(process.cwd(), "mess.config.ts")
     //   ? path.resolve(process.cwd(), "mess.config.ts")
     //   : path.resolve(process.cwd(), "mess.config.js");
 
-    const configPath = path.resolve(process.cwd(), "mess.config.js");
+      const configPath = path.resolve(process.cwd(), "mess.config.js")
+    // console.log(configPath,"configPathconfigPath")
     // Clear the require cache to ensure the latest changes are picked up
     delete require.cache[require.resolve(configPath)];
     const userConfig: MessConfig = require(configPath);
-
+    // console.log(userConfig,"userConfig")
+    // console.log(getMergedConfig(  
+    //   defaultBreakpoints,
+    //   defaultTheme,
+    //   userConfig.breakpoints,
+    //   userConfig.theme
+    // ), "-----------------");
+    
     // Merge user-defined configurations with defaults
     return getMergedConfig(
       defaultBreakpoints,
@@ -25,7 +33,7 @@ export const loadConfig = (): MessConfig => {
   } catch (error) {
     // Return defaults if config file is not found or invalid
     console.error(error, "--------");
-
+    
     return {
       breakpoints: defaultBreakpoints,
       theme: defaultTheme,

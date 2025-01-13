@@ -11,7 +11,7 @@ export const generateStyles = (
   let styles: StylesMessInternal = { base: "" };
 
   const classes = customClasses.split(" ");
-
+// console.log("custome classes",classes)
   for (const cls of classes) {
     // Handle static utility classes (like padding, background, etc.)
     if (theme.utilityClasses[cls]) {
@@ -28,7 +28,7 @@ export const generateStyles = (
         styles.base += getCssPropertyValue(cssProperty, value);
       }
     }
-
+// console.log(styles,"styles")
     // Handle breakpoint-based dynamic classes (e.g., lg:h-[20px])
     const breakpointMatch = cls.match(/^(\w+):(\w+)-\[(.+)\]$/);
     if (breakpointMatch) {
@@ -48,6 +48,8 @@ export const generateStyles = (
       }
     }
   }
+// console.log(styles,"styles")
+
   return styles;
 };
 
