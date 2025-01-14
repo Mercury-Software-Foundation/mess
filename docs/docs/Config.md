@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+title: "Mess config"
 ---
 
 The `mess.config.js` file is used to define custom configurations for your `mess` package. This file must be placed in the root directory of your project. It allows users to define reusable styles, paddings, and other utilities, enabling consistent styling across the application.
@@ -18,9 +19,16 @@ module.exports = {
 
     classes: {
       buttonStyles: {
-        base: "padding: $medium;  background-color: yellow;",
-        sm: "font-size: 10px; padding:50px; ",
-        lg: "color: black; background-color: green; border-radius:50px;",
+        base: {
+      padding: "8px 10px",
+      background: "#27A5C9",
+      color: "white",
+      borderRadius: "8px",
+      border: "none",
+    },
+    lg: {
+      padding: "10px 20px",
+    },
       },
     },
   },
@@ -60,9 +68,16 @@ The `classes` key is used to define reusable styles for specific components, suc
 {
 "classes": {
   "buttonStyles": {
-    "base": "padding: $medium; background-color: yellow;",
-    "sm": "font-size: 10px; padding:50px;",
-    "lg": "color: black; background-color: green; border-radius:50px;",
+    "base":{
+      padding: "8px 10px",
+      background: "#27A5C9",
+      color: "white",
+      borderRadius: "8px",
+      border: "none",
+    },
+    lg: {
+      padding: "10px 20px",
+    },
   }
 }
 }
@@ -83,11 +98,7 @@ import { Button } from 'mess';
 const MyButton = () => {
   return (
     <Button
-      styles={{
-        base: `$buttonStyles.base`,
-        sm: `$buttonStyles.sm`,
-        lg: `$buttonStyles.lg`,
-      }}
+      styles={"$buttonStyles"}
     >
       Custom Button
     </Button>
@@ -104,11 +115,7 @@ import { Button } from 'mess';
 const MyButton = () => {
   return (
     <Button
-      styles={{
-        base: `${theme.classes.buttonStyles.base}`,
-        sm: `${theme.classes.buttonStyles.sm}`,
-        lg: `${theme.classes.buttonStyles.lg}`,
-      }}
+      styles={theme.classes.buttonStyles}
     >
       Custom Button
     </Button>
