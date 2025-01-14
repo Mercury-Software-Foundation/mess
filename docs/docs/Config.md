@@ -35,7 +35,45 @@ module.exports = {
 };
 ```
 ## Configuration Details ##
+### Breakpoints
+
+The `breakpoints` configuration allows users to define responsive design breakpoints for their project. These breakpoints can be customized through the configuration file provided to the `mess` package.
+
+#### Default Breakpoints
+
+The package ships with the following default breakpoints:
+
+| Key   | Min Width  | Description                                  |
+|-------|------------|----------------------------------------------|
+| `sm`  | `320px`    | Small screens, typically for mobile devices. |
+| `md`  | `768px`    | Medium screens, typically for tablets.       |
+| `lg`  | `1024px`   | Large screens, typically for desktops.       |
+| `xl`  | `1280px`   | Extra large screens, typically for larger monitors. |
+| `xxl` | `1536px`   | Extra extra large screens, typically for very wide displays. |
+
+#### Customizing Breakpoints
+
+you can override the default breakpoints by specifying their own values in the configuration file. This allows flexibility to match the design requirements of any project.
+
+#### Example Configuration
+
+Here is an example of customizing breakpoints in the `mess` configuration file:
+
+```javascript
+module.exports = {
+    breakpoints: {
+    sm: { min: "360px" }, // Customized small breakpoint
+    md: { min: "800px" }, // Customized medium breakpoint
+    lg: { min: "1080px" }, // Customized large breakpoint
+    xl: { min: "1440px" }, // Customized extra-large breakpoint
+    xxl: { min: "1920px" }, // Customized extra-extra-large breakpoint
+    //you can add more breakpoints according to the requirement
+  },
+  theme:{}
+};
+```
 ### Theme Configuration ###
+
 
 The `theme` object is the main configuration section for styling. It allows you to define reusable utilities like custom `paddings` and other style classes.
 
