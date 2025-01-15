@@ -1,6 +1,6 @@
 {
   "name": "@mercury-js/mess",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "This is a css package",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

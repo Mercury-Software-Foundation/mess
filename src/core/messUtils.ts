@@ -82,9 +82,9 @@ export const generateFormattedCssString = (
         if (currentLevel && currentLevel[key]) {
           currentLevel = currentLevel[key];
         } else {
-          console.error(
-            `Invalid style path: '${userStyles}'. Key '${key}' not found.`
-          );
+          // console.error(
+          //   `Invalid style path: '${userStyles}'. Key '${key}' not found.`
+          // );
           currentLevel = {}; // Fallback to empty object
           break;
         }

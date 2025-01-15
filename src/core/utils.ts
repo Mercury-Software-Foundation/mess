@@ -32,7 +32,7 @@ export const loadConfig = (): MessConfig => {
     );
   } catch (error) {
     // Return defaults if config file is not found or invalid
-    console.error(error, "--------");
+    // console.error(error, "--------");
     
     return {
       breakpoints: defaultBreakpoints,

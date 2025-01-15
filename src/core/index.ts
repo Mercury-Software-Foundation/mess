@@ -36,9 +36,9 @@ export const Mess = ({
       if (currentLevel && currentLevel[key]) {
         currentLevel = currentLevel[key];
       } else {
-        console.error(
-          `Invalid style path: '${stylesCssObject}'. Key '${key}' not found.`
-        );
+        // console.error(
+        //   `Invalid style path: '${stylesCssObject}'. Key '${key}' not found.`
+        // );
         currentLevel = {};
         break;
       }
