@@ -3,17 +3,18 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../../App.css";
 import { CodeDisplay } from "../Sample";
+import { div } from "framer-motion/client";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Section({ slides }) {
   useEffect(() => {
     const sections = document.querySelectorAll(".pin-section");
-  
+
     sections.forEach((section, i) => {
       const slidesEls = section.querySelectorAll(".slide");
       const colorBoxes = section.querySelectorAll(".color-box");
-  
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
@@ -24,7 +25,7 @@ export default function Section({ slides }) {
           id: i + 1,
         },
       });
-  
+
       slidesEls.forEach((slide, index) => {
         // Animate left slides for overlapping
         tl.to(
@@ -35,7 +36,7 @@ export default function Section({ slides }) {
           },
           index * 1 // Sequentially trigger each slide
         );
-  
+
         if (index !== slides.length - 1) {
           // Fade out only when transitioning to the next slide
           tl.to(
@@ -47,7 +48,7 @@ export default function Section({ slides }) {
             (index + 0.7) // Delay before fading out
           );
         }
-  
+
         // Animate right color boxes
         tl.to(
           colorBoxes[index],
@@ -59,7 +60,7 @@ export default function Section({ slides }) {
           },
           index * 1
         );
-  
+
         if (index !== slides.length - 1) {
           tl.to(
             colorBoxes[index],
@@ -73,15 +74,15 @@ export default function Section({ slides }) {
           );
         }
       });
-  
+
       // Set the initial visibility of the first slide
       gsap.set(slidesEls[0], { autoAlpha: 1 });
       gsap.set(colorBoxes[0], { y: "0%", autoAlpha: 1, filter: "blur(0px)" });
     });
   }, [slides]);
-  
-  
-  
+
+
+
 
   const codes = [
     `<Box
@@ -150,8 +151,8 @@ export default function Section({ slides }) {
       </Box>
 
     </Box>`,
- 
-  `
+
+    `
  <Box
         styles={{
           base: \`
@@ -459,7 +460,7 @@ export default function Section({ slides }) {
         </Box>
       </Box>
   `,
-  `
+    `
   <Box
     styles={{
       base: \`
@@ -687,40 +688,65 @@ export default function Section({ slides }) {
     </Text>
   </Box>
   `,
- 
+
   ];
 
   return (
     <div>
-      <div className="px-36 h-screen flex items-center justify-center section pin-section">
-        <div className="grid grid-cols-2 gap-10 h-full items-center">
-          {/* Left Section: Slides */}
-          <div className="w-[600px] h-[200px] flex items-start justify-start relative">
-            {slides.map((slide, index) => (
-              <div
-                key={index}
-                className="slide center absolute inset-0 opacity-0 transition-opacity duration-300 flex items-center justify-center -ml-[250px] "
-              >
-                {/* <h1 className="text-red-700 bg-white rounded-2xl text-4xl w-[400px] h-[200px] font-bold flex flex-col justify-center text-center"> */}
+      <div className="md:block hidden">
+        <div className="px-36 h-screen flex items-center justify-center section pin-section">
+          <div className="grid grid-cols-2 gap-10 h-full items-center">
+            {/* Left Section: Slides */}
+            <div className="w-[600px] h-[200px] flex items-start justify-start relative">
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className="slide center absolute inset-0 opacity-0 transition-opacity duration-300 flex items-center justify-center -ml-[250px] "
+                >
+                  {/* <h1 className="text-red-700 bg-white rounded-2xl text-4xl w-[400px] h-[200px] font-bold flex flex-col justify-center text-center"> */}
                   {slide.text}
-                {/* </h1> */}
-              </div>
-            ))}
-          </div>
+                  {/* </h1> */}
+                </div>
+              ))}
+            </div>
 
-          {/* Right Section: CodeDisplay */}
-          <div className="relative w-full h-[400px] justify-self-center flex items-center ">
-          {codes.map((code, index) => (
-        <pre
-          key={index}
-          className="bg-gray-800 text-white rounded-xl p-4 overflow-auto max-h-[400px] w-full no-scrollbar color-box absolute inset-0  h-full opacity-0 transform translate-y-full shadow-md"
-        >
-          <code className="block whitespace-pre ">{code}</code>
-        </pre>
-      ))}
+            {/* Right Section: CodeDisplay */}
+            <div className="relative w-full h-[400px] justify-self-center flex items-center ">
+              {codes.map((code, index) => (
+                <pre
+                  key={index}
+                  className="bg-gray-800 text-white rounded-xl p-4 overflow-auto max-h-[400px] w-full no-scrollbar color-box absolute inset-0  h-full opacity-0 transform translate-y-full shadow-md"
+                >
+                  <code className="block whitespace-pre ">{code}</code>
+                </pre>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+      <div className="md:hidden block">
+  <div className="backdrop-blur-xl p-5">
+    <div className="flex flex-col gap-6 items-start justify-start">
+      {slides.map((slide, index) => (
+        <div key={index} className="w-full flex flex-col gap-4">
+          <div className="flex items-center justify-center">
+            {/* Uncomment and style if needed */}
+            {/* <h1 className="text-red-700 bg-white rounded-2xl text-4xl w-[400px] h-[200px] font-bold flex flex-col justify-center text-center"> */}
+            {slide.text}
+            {/* </h1> */}
+          </div>
+          {codes[index] && (
+            <pre className="bg-gray-800 text-white rounded-xl p-4 overflow-auto max-h-[400px] w-full no-scrollbar shadow-md">
+              <code className="block whitespace-pre">{codes[index]}</code>
+            </pre>
+          )}
+        </div>
+      ))}
     </div>
+  </div>
+</div>
+
+    </div>
+
   );
 }

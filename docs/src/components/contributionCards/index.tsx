@@ -11,7 +11,7 @@ type Testimonial = {
   designation: string;
   src: string;
 };
-export const AnimatedTestimonials = ({
+export const  AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
 }: {
@@ -45,8 +45,8 @@ export const AnimatedTestimonials = ({
   return (
     <div className="">
 
-    <div className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-10 z-50 rounded-[20px] bg-white/10 backdrop-blur-md border-2 border-blue-800 shadow-lg">
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div className="max-w-[20rem] md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-10 z-50 rounded-[20px]  border-2 border-blue-800 ">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-10">
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>
@@ -117,10 +117,10 @@ export const AnimatedTestimonials = ({
             <h3 className="text-2xl font-bold text-white">
               {testimonials[active].name}
             </h3>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-400 mb-0">
               {testimonials[active].designation}
             </p>
-            <motion.p className="text-lg text-gray-300 mt-8">
+            <motion.p className="text-lg text-gray-300 md:mt-8 mt-2">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -146,7 +146,7 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0 ">
+          <div className="flex gap-4  md:pt-0 ">
             <button
               onClick={handlePrev}
               className="h-7 w-7 rounded-full bg-gray-800 flex items-center justify-center group/button cursor-pointer"

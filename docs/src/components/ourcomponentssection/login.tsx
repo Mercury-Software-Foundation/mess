@@ -56,7 +56,7 @@ const LoginForm = ({
   });
 
   return (
-    <div className="w-[400px] mx-auto p-6 shadow-lg rounded-lg bg-white/5 backdrop-blur-3xl text-center">
+    <div className="md:w-[400px] mx-auto p-6 shadow-lg rounded-lg bg-white/5 backdrop-blur-3xl text-center ">
       <p className="text-2xl font-bold">Sign In With</p>
 
       {/* External Providers */}

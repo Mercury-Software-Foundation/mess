@@ -85,12 +85,12 @@ export default function Navbar() {
           </div>
         </div>
         {isOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 rounded-b-full">
+          <div className="md:hidden ">
             {links.map((link) => (
               <a
                 key={link.title}
                 href={link.href}
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-blue-500"
+                className="block flex flex-row justify-center px-4 py-2 text-gray-800 font-Manrope-Bold"
               >
                 {link.title}
               </a>

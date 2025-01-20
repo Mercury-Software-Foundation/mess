@@ -83,12 +83,12 @@ export default function Home() {
   ];
   return (
     <MainLayout>
-      <div  className="relative w-full h-[100vh] flex items-center justify-center -top-28 z-10 overflow-auto no-scrollbar">
+      <div  className="relative w-full h-[100vh] flex items-center justify-center md:-top-28 -top-16 z-10 overflow-auto no-scrollbar">
         <HeroBanner />
       </div>
-      <div className='h-auto overflow-scroll no-scrollbar'>
+      <div className='h-auto overflow-scroll no-scrollbar '>
 
-      <Section
+      <Section 
         slides={[
           { text: <Buttons/> },
           { text:  <Card/> },

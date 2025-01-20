@@ -75,10 +75,10 @@ function HeroBanner() {
       {/* <div className="fixed top-0 left-0 w-full z-10">
         <Navbar />
       </div> */}
-      <div className="flex flex-col items-center justify-center text-center text-black px-8 ">
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text text-5xl w-[100%]">Effortlessly Style Responsive</h1>
-          <h1 className="text1 text-5xl w-[100%]">Designs in Your HTML.</h1>
+      <div className="flex flex-col gap-4 items-center justify-center text-center  text-black md:px-8 px-4 ">
+        <div className="flex flex-col items-center justify-center ">
+          <h1 className="text md:text-5xl text-2xl w-[100%] mb-0">Effortlessly Style Responsive</h1>
+          <h1 className="text1 md:text-5xl text-2xl w-[100%] mb-0">Designs in Your HTML.</h1>
         </div>
         <div className="bg-transparent max-w-[74rem] text-black">
           {/* <TypewriterEffectSmooth
@@ -95,7 +95,7 @@ function HeroBanner() {
             Effortlessly Style Responsive Designs Directly in Your HTML.
           </h1> */}
           <div className="flex flex-col items-center justify-center">
-            <p className="text-gray-700 text-center w-[80%] font-Manrope-Light word">
+            <p className="text-gray-700 text-center   md:w-[80%] font-Manrope-Light word mb-0">
               Mess allows you to style responsive and customizable designs directly in your HTML. Use intuitive class names, built-in breakpoints, and customizable configurations to streamline your workflow and build faster.
             </p>
           </div>

@@ -4,10 +4,10 @@ import { MdArrowOutward } from 'react-icons/md'
 function Footer() {
   return (
     <footer className="bg-white/5 backdrop-blur-4xl  py-12 px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-5  gap-10">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-5 grid-cols-1  gap-10">
         {/* Left Section */}
         <div className="col-span-2">
-          <h3 className="text-2xl font-semibold leading-snug">
+          <h3 className="text-2xl text-[20px] font-semibold leading-snug">
             Subscribe to the Mercury newsletter to stay up-to-date with the latest releases
           </h3>
           <div className="relative w-full">
@@ -21,7 +21,7 @@ function Footer() {
         </div>
 
         {/* Right Section */}
-        <div className="col-span-1 md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="col-span-1 md:col-span-3 grid grid-cols-2  md:grid-cols-3 gap-4">
           {/* Column 1 */}
           <div className='flex flex-col gap-4'>
             <h4 className="font-semibold mb-0">Company</h4>

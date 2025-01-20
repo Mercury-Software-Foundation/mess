@@ -57,24 +57,24 @@ export const AnimatedVisitButton = ({
 
   return (
     <a href="/docs/intro" className="no-underline">
-    <button
-      ref={buttonRef}
-      className={cn(
-        "relative flex flex-row gap-2 justify-center items-center px-8 py-2 border-black border rounded-full text-[16px] font-Manrope-Bold overflow-hidden text-black bg-white hover:text-white transition cursor-pointer",
-        className
-      )}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <span className="z-10">{text}</span>
-      <MdArrowOutward className="z-10" />
-      <div
-        className="hover-overlay absolute inset-0 bg-black z-0"
-        style={{
-          clipPath: "circle(0% at 50% 50%)",
-        }}
-      ></div>
-    </button>
+      <button
+        ref={buttonRef}
+        className={cn(
+          "relative flex flex-row gap-2 justify-center items-center px-8 py-2 border-black border rounded-full text-[16px] font-Manrope-Bold overflow-hidden text-black bg-white hover:text-white transition cursor-pointer ",
+          className
+        )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <span className="z-10 no-underline hover:no-underline">{text}</span>
+        <MdArrowOutward className="z-10" />
+        <div
+          className="hover-overlay absolute inset-0 bg-black z-0"
+          style={{
+            clipPath: "circle(0% at 50% 50%)",
+          }}
+        ></div>
+      </button>
     </a>
   );
 };
