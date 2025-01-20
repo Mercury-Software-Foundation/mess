@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+title: "Mess config"
 ---
 
 The `mess.config.js` file is used to define custom configurations for your `mess` package. This file must be placed in the root directory of your project. It allows users to define reusable styles, paddings, and other utilities, enabling consistent styling across the application.
@@ -18,16 +19,61 @@ module.exports = {
 
     classes: {
       buttonStyles: {
-        base: "padding: $medium;  background-color: yellow;",
-        sm: "font-size: 10px; padding:50px; ",
-        lg: "color: black; background-color: green; border-radius:50px;",
+        base: {
+      padding: "8px 10px",
+      background: "#27A5C9",
+      color: "white",
+      borderRadius: "8px",
+      border: "none",
+    },
+    lg: {
+      padding: "10px 20px",
+    },
       },
     },
   },
 };
 ```
 ## Configuration Details ##
+### Breakpoints
+
+The `breakpoints` configuration allows users to define responsive design breakpoints for their project. These breakpoints can be customized through the configuration file provided to the `mess` package.
+
+#### Default Breakpoints
+
+The package ships with the following default breakpoints:
+
+| Key   | Min Width  | Description                                  |
+|-------|------------|----------------------------------------------|
+| `sm`  | `320px`    | Small screens, typically for mobile devices. |
+| `md`  | `768px`    | Medium screens, typically for tablets.       |
+| `lg`  | `1024px`   | Large screens, typically for desktops.       |
+| `xl`  | `1280px`   | Extra large screens, typically for larger monitors. |
+| `xxl` | `1536px`   | Extra extra large screens, typically for very wide displays. |
+
+#### Customizing Breakpoints
+
+you can override the default breakpoints by specifying their own values in the configuration file. This allows flexibility to match the design requirements of any project.
+
+#### Example Configuration
+
+Here is an example of customizing breakpoints in the `mess` configuration file:
+
+```javascript
+module.exports = {
+    breakpoints: {
+    sm: { min: "360px" }, // Customized small breakpoint
+    md: { min: "800px" }, // Customized medium breakpoint
+    lg: { min: "1080px" }, // Customized large breakpoint
+    xl: { min: "1440px" }, // Customized extra-large breakpoint
+    xxl: { min: "1920px" }, // Customized extra-extra-large breakpoint
+    //you can add more breakpoints according to the requirement
+  },
+  theme:{}
+};
+```
 ### Theme Configuration ###
+
 
 The `theme` object is the main configuration section for styling. It allows you to define reusable utilities like custom `paddings` and other style classes.
 
@@ -60,9 +106,16 @@ The `classes` key is used to define reusable styles for specific components, suc
 {
 "classes": {
   "buttonStyles": {
-    "base": "padding: $medium; background-color: yellow;",
-    "sm": "font-size: 10px; padding:50px;",
-    "lg": "color: black; background-color: green; border-radius:50px;",
+    "base":{
+      padding: "8px 10px",
+      background: "#27A5C9",
+      color: "white",
+      borderRadius: "8px",
+      border: "none",
+    },
+    lg: {
+      padding: "10px 20px",
+    },
   }
 }
 }
@@ -83,11 +136,7 @@ import { Button } from 'mess';
 const MyButton = () => {
   return (
     <Button
-      styles={{
-        base: `$buttonStyles.base`,
-        sm: `$buttonStyles.sm`,
-        lg: `$buttonStyles.lg`,
-      }}
+      styles={"$buttonStyles"}
     >
       Custom Button
     </Button>
@@ -104,11 +153,7 @@ import { Button } from 'mess';
 const MyButton = () => {
   return (
     <Button
-      styles={{
-        base: `${theme.classes.buttonStyles.base}`,
-        sm: `${theme.classes.buttonStyles.sm}`,
-        lg: `${theme.classes.buttonStyles.lg}`,
-      }}
+      styles={theme.classes.buttonStyles}
     >
       Custom Button
     </Button>

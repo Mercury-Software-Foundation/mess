@@ -9,9 +9,9 @@
 To install **mess**, you can use npm or yarn.
 
 ```bash
-npm install mess
+npm install @mercury-js/mess
 or
-yarn add mess
+yarn add @mercury-js/mess
 
 ```
 📝 Usage
@@ -21,7 +21,7 @@ yarn add mess
 
 To use **mess**, you first need to import the semantic tags (Box, Text, Button, etc.) into your React project.
 ```typescript
-import { Box, Text, Button } from 'mess'
+import { Box, Text, Button } from '@mercury-js/mess'
 ```
 
 ### Styled Components Tags
@@ -93,7 +93,7 @@ Once you’ve imported the tags, you can start applying styles directly to these
 
 **Example of usage:**
 ```javascript
-import { Button,Text,Box,Image} from 'mess';
+import { Button,Text,Box,Image} from '@mercury-js/mess';
 
 const MyComponent = () => {
   return (

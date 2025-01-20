@@ -1,6 +1,6 @@
 {
   "name": "@mercury-js/mess",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "This is a css package",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -12,7 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "rollup": "rollup -c --bundleConfigAsCjs",
     "build": "rollup -c --bundleConfigAsCjs && npm run build:umd",
-    "build:umd": "rollup -c rollup.config.umd.js --bundleConfigAsCjs"
+    "build:umd": "rollup -c rollup.config.umd.js --bundleConfigAsCjs",
+    "postinstall": "node dist/cli.js"
   },
   "files": [
     "dist"
@@ -74,6 +75,7 @@
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
+    "ts-node": "^10.9.2",
     "tslib": "^2.6.3",
     "typescript": "^5.5.3"
   },
@@ -86,6 +88,7 @@
     "chokidar": "^4.0.1",
     "facepaint": "^1.2.1",
     "gsap": "^3.12.5",
+    "postcss": "^8.4.49",
     "prism-react-renderer": "^2.4.1",
     "react-icons": "^5.3.0",
     "react-live": "^4.1.8"

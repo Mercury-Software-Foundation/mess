@@ -11,9 +11,9 @@ The **mess** library allows you to build responsive, styled components with ease
 To install mess, you can use npm or yarn.
  ### npm
 ```bash
-npm i mess
+npm i @mercury-js/mess
 ```
  ### yarn
 ```bash
-yarn add mess
+yarn add @mercury-js/mess
 ```
