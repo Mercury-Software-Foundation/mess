@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.6.3">
+<title data-rh="true">Mess</title><meta data-rh="true" property="og:title" content="Mess"><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mess.mercuryjs.dev/img/metaOG.png"><meta data-rh="true" name="twitter:image" content="https://mess.mercuryjs.dev/img/metaOG.png"><meta data-rh="true" property="og:url" content="https://mess.mercuryjs.dev/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mess.mercuryjs.dev/"><link data-rh="true" rel="alternate" href="https://mess.mercuryjs.dev/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mess.mercuryjs.dev/" hreflang="x-default"><script data-rh="true">function insertBanner(){var n=document.createElement("div");n.id="__docusaurus-base-url-issue-banner-container";n.innerHTML='\n<div id="__docusaurus-base-url-issue-banner" style="border: thick solid red; background-color: rgb(255, 230, 179); margin: 20px; padding: 20px; font-size: 20px;">\n   <p style="font-weight: bold; font-size: 30px;">Your Docusaurus site did not load properly.</p>\n   <p>A very common reason is a wrong site <a href="https://docusaurus.io/docs/docusaurus.config.js/#baseUrl" style="font-weight: bold;">baseUrl configuration</a>.</p>\n   <p>Current configured baseUrl = <span style="font-weight: bold; color: red;">/</span>  (default value)</p>\n   <p>We suggest trying baseUrl = <span id="__docusaurus-base-url-issue-banner-suggestion-container" style="font-weight: bold; color: green;"></span></p>\n</div>\n',document.body.prepend(n);var e=document.getElementById("__docusaurus-base-url-issue-banner-suggestion-container"),s=window.location.pathname,o="/"===s.substr(-1)?s:s+"/";e.innerHTML=o}document.addEventListener("DOMContentLoaded",(function(){void 0===window.docusaurus&&insertBanner()}))</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Mess RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Mess Atom Feed"><link rel="stylesheet" href="/assets/css/styles.2ac02ce6.css">
+<script src="/assets/js/runtime~main.3cdbe843.js" defer="defer"></script>
+<script src="/assets/js/main.bf6ce3d9.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div class="relative"><div class="h-screen w-full fixed overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]"><svg class="hidden"><defs><filter id="blurMe"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo"></feColorMatrix><feBlend in="SourceGraphic" in2="goo"></feBlend></filter></defs></svg><div></div><div class="gradients-container h-full w-full blur-lg [filter:url(#blurMe)_blur(40px)]"><div class="absolute [background:radial-gradient(circle_at_center,_var(--first-color)_0,_var(--first-color)_50%)_no-repeat] [mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)] [transform-origin:center_center] animate-first opacity-100"></div><div class="absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--second-color),_0)_50%)_no-repeat] [mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)] [transform-origin:calc(50%-400px)] animate-second opacity-100"></div><div class="absolute [background:radial-gradient(circle_at_center,_rgba(var(--third-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat] [mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)] [transform-origin:calc(50%+400px)] animate-third opacity-100"></div><div class="absolute [background:radial-gradient(circle_at_center,_rgba(var(--fourth-color),_0.8)_0,_rgba(var(--fourth-color),_0)_50%)_no-repeat] [mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)] [transform-origin:calc(50%-200px)] animate-fourth opacity-70"></div><div class="absolute [background:radial-gradient(circle_at_center,_rgba(var(--fifth-color),_0.8)_0,_rgba(var(--fifth-color),_0)_50%)_no-repeat] [mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)] [transform-origin:calc(50%-800px)_calc(50%+800px)] animate-fifth opacity-100"></div><div class="absolute [background:radial-gradient(circle_at_center,_rgba(var(--pointer-color),_0.8)_0,_rgba(var(--pointer-color),_0)_50%)_no-repeat] [mix-blend-mode:var(--blending-value)] w-full h-full -top-1/2 -left-1/2 opacity-70"></div></div></div><div class="absolute z-20 top-0 w-full"><div class="flex justify-center w-full"><nav class="sticky top-0 bg-white/5 backdrop-blur-lg border border-gray-300 rounded-full z-50 max-w-4xl w-full"><div class="px-6 py-2"><div class="flex justify-between items-center h-16"><div class="flex items-center z-30 cursor-pointer"><a href="#" class="flex items-center"><span class="ml-2 text-xl font-semibold text-gray-800 cursor-pointer">Mess</span></a></div><div class="hidden md:flex space-x-8 z-30"><div class="mx-auto hidden md:flex h-16 gap-4 items-end rounded-2xl bg-transparent px-4 pb-3"><a href="#"><div style="width:40px;height:40px" class="aspect-square rounded-full hover:border-black hover:border-2 flex items-center justify-center relative"><div style="width:20px;height:20px" class="flex items-center justify-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="h-full w-full text-black" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-linejoin="round" stroke-width="32" d="M416 221.25V416a48 48 0 0 1-48 48H144a48 48 0 0 1-48-48V96a48 48 0 0 1 48-48h98.75a32 32 0 0 1 22.62 9.37l141.26 141.26a32 32 0 0 1 9.37 22.62z"></path><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 56v120a32 32 0 0 0 32 32h120m-232 80h160m-160 80h160"></path></svg></div></div></a><a href="#"><div style="width:40px;height:40px" class="aspect-square rounded-full hover:border-black hover:border-2 flex items-center justify-center relative"><div style="width:20px;height:20px" class="flex items-center justify-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="h-full w-full text-black" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M288 288h-32v-64h32v64zm288-128v192H288v32H160v-32H0V160h576zm-416 32H32v128h64v-96h32v96h32V192zm160 0H192v160h64v-32h64V192zm224 0H352v128h64v-96h32v96h32v-96h32v96h32V192z"></path></svg></div></div></a><a href="#"><div style="width:40px;height:40px" class="aspect-square rounded-full hover:border-black hover:border-2 flex items-center justify-center relative"><div style="width:20px;height:20px" class="flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-brand-x h-full w-full text-black"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg></div></div></a><a href="#"><div style="width:40px;height:40px" class="aspect-square rounded-full hover:border-black hover:border-2 flex items-center justify-center relative"><div style="width:20px;height:20px" class="flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-brand-github h-full w-full text-black"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg></div></div></a></div><div class="relative block md:hidden translate-y-20"><button class="h-10 w-10 rounded-full bg-transparent flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-layout-navbar-collapse h-5 w-5 text-neutral-500"><path d="M4 18v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M4 9h16"></path><path d="M10 16l2 -2l2 2"></path></svg></button></div></div><div class="md:hidden flex items-center"><button class="text-gray-800 hover:text-gray-600 focus:outline-none"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button></div></div></div></nav></div><main><div class="relative w-full h-[100vh] flex items-center justify-center md:-top-28 -top-16 z-10 overflow-auto no-scrollbar"><div class="flex flex-col items-center justify-center relative overflow-hidden"><div class="flex flex-col gap-4 items-center justify-center text-center text-black md:px-8 px-4"><div class="flex flex-col items-center justify-center"><h1 class="text md:text-5xl text-2xl w-[100%] mb-0">Effortlessly Style Responsive</h1><h1 class="text1 md:text-5xl text-2xl w-[100%] mb-0">Designs in Your HTML.</h1></div><div class="bg-transparent max-w-[74rem] text-black"><div class="flex flex-col items-center justify-center"><p class="text-gray-700 text-center md:w-[80%] font-Manrope-Light word mb-0">Mess allows you to style responsive and customizable designs directly in your HTML. Use intuitive class names, built-in breakpoints, and customizable configurations to streamline your workflow and build faster.</p></div></div><a href="/docs/intro" class="no-underline"><button class="relative flex flex-row gap-2 justify-center items-center px-8 py-2 border-black border rounded-full text-[16px] font-Manrope-Bold overflow-hidden text-black bg-white hover:text-white transition cursor-pointer animated-button"><span class="z-10 no-underline hover:no-underline">Get Started</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="z-10" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6 6v2h8.59L5 17.59 6.41 19 16 9.41V18h2V6z"></path></svg><div class="hover-overlay absolute inset-0 bg-black z-0" style="clip-path:circle(0% at 50% 50%)"></div></button></a></div></div></div><div class="h-auto overflow-scroll no-scrollbar"><div><div class="md:block hidden"><div class="px-36 h-screen flex items-center justify-center section pin-section"><div class="grid grid-cols-2 gap-10 h-full items-center"><div class="w-[600px] h-[200px] flex items-start justify-start relative"><div class="slide center absolute inset-0 opacity-0 transition-opacity duration-300 flex items-center justify-center -ml-[250px]"><div class="flex flex-col gap-5 justify-center items-center bg-white/10 border-none rounded-[30px] backdrop-blur-3xl md:p-20 p-5 shadow-md"><div class="flex flex-row gap-4"><button class="rounded-[8px] border-none px-[20px] py-[10px] bg-[#1174BC] text-[20px] cursor-pointer text-white">Contained</button><button class="border-2 rounded-[8px] border-[#1174BC] px-[20px] py-[10px] bg-transparent text-[20px] cursor-pointer text-[#1174BC] hover:bg-[#1174BC] hover:text-white">Outlined</button><button class="border-none bg-transparent text-[20px] cursor-pointer text-[#1174BC]">Text</button></div><div class="flex flex-row gap-4"><button class="rounded-[8px] border-none px-[20px] py-[10px] bg-[#1174BC] text-[16px] cursor-pointer text-white">Medium</button><button class="border-2 rounded-[8px] border-[#1174BC] px-[20px] py-[10px] bg-transparent text-[16px] cursor-pointer text-[#0071E3] hover:bg-[#1174BC] hover:text-white">Medium</button><button class="border-none bg-transparent text-[16px] cursor-pointer text-[#1174BC]">Medium</button></div><div class="flex flex-row gap-4"><button class="rounded-[8px] border-none px-[15px] py-[8px] bg-[#1174BC] text-[14px] cursor-pointer text-white">Small</button><button class="border-2 rounded-[8px] border-[#1174BC] px-[15px] py-[8px] bg-transparent text-[14px] cursor-pointer text-[#1174BC] hover:bg-[#1174BC] hover:text-white">Small</button><button class="border-none bg-transparent text-[14px] cursor-pointer text-[#1174BC]">Small</button></div></div></div><div class="slide center absolute inset-0 opacity-0 transition-opacity duration-300 flex items-center justify-center -ml-[250px]"><div class="flex flex-col items-center justify-center"><div class="flex justify-center gap-5 mb-5"><button class="bg-blue-800 hover:bg-blue-900 text-white py-2 px-5 rounded font-bold transition-colors duration-300 cursor-pointer">Mobile</button><button class="bg-gray-300 text-white py-2 px-5 rounded font-bold transition-colors duration-300 cursor-pointer">Desktop</button></div><div class="grid shadow-lg rounded-2xl mx-auto text-sm w-[350px] grid-cols-1 grid-rows-auto gap-2"><div class="col-span-1 rounded-t-2xl"><img src="https://cdn.pixelspray.io/v2/black-bread-289bfa/XUefL6/wrkr/t.resize(h:1355,w:1080)/data/mothercare/02-july-2022/410317164_Z003_1.jpg" alt="Card Image" class="w-full object-cover h-[200px] rounded-t-2xl"></div><div class="col-span-1 p-5 border-b border-gray-300"><div class="flex flex-col gap-2"><div class="flex justify-between"><h2 class="font-bold text-lg">Title</h2><span class="text-gray-500 text-lg">$110.00</span></div><div class="flex flex-col gap-5"><span class="text-gray-500">In stock</span><div class="flex gap-2 flex-wrap"><button class="bg-blue-800 text-white py-1 px-3 rounded cursor-pointer">XS</button><button class="py-1 px-3 border border-gray-300 cursor-pointer">S</button><button class="py-1 px-3 border border-gray-300 cursor-pointer">M</button><button class="py-1 px-3 border border-gray-300 cursor-pointer">L</button><button class="py-1 px-3 border border-gray-300 cursor-pointer">XL</button></div></div></div></div><div class="col-span-1 py-3 px-5"><div class="flex flex-col gap-7"><div class="flex justify-between"><div class="flex gap-3"><button class="bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-blue-900 cursor-pointer">Buy now</button><button class="border border-black font-bold py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-gray-100 cursor-pointer">Add to cart</button></div><button class="border border-gray-300 py-2 px-4 rounded-lg cursor-pointer"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-gray-500" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg></button></div></div></div></div></div></div><div class="slide center absolute inset-0 opacity-0 transition-opacity duration-300 flex items-center justify-center -ml-[250px]"><div class="md:w-[400px] mx-auto p-6 shadow-lg rounded-lg bg-white/5 backdrop-blur-3xl text-center"><p class="text-2xl font-bold">Sign In With</p><div class="flex justify-center gap-4 py-4"><button class="flex items-center justify-center px-8 py-2 bg-white text-black border border-gray-300 rounded-md text-lg hover:bg-[#4285f4] hover:text-white transition-all"><svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
+	c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24
+	c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657
+	C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36
+	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
+	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path></svg>Google</button><button class="flex items-center justify-center px-8 py-2 bg-white text-black border border-gray-300 rounded-md text-lg hover:bg-[#333] hover:text-white transition-all"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>GitHub</button></div><form><div class="mb-6"><label class="block text-left font-semibold mb-2">Email Address</label><input type="email" name="username" placeholder="Email Address" class="w-full p-3 border border-gray-300 rounded-md mb-2"><label class="block text-left font-semibold mb-2">Password</label><input type="password" name="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded-md"></div><div class="flex justify-between items-center"><p class="text-sm text-blue-600 cursor-pointer">Forgot password?</p><button type="submit" class="px-8 py-2 bg-[#3169DA] text-white rounded-md text-lg font-bold cursor-pointer">Sign In</button></div></form><p class="mt-4 text-sm">Don&#x27;t have an account?<!-- --> <span class="text-[#007BFF] underline cursor-pointer">Sign Up</span></p></div></div></div><div class="relative w-full h-[400px] justify-self-center flex items-center"><pre class="bg-gray-800 text-white rounded-xl p-4 overflow-auto max-h-[400px] w-full no-scrollbar color-box absolute inset-0 h-full opacity-0 transform translate-y-full shadow-md"><code class="block whitespace-pre">&lt;Box
+      styles={{
+        base: `
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:20px;
+      align-items:center;
+      height:100vh;`,
+      }}
+    &gt;
+      &lt;Box
+        styles={{
+          base:`
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      gap:20px;
+      align-items:center; `,
+        }}
+      &gt;
+        &lt;Button styles={&quot;$buttonStyles.contained&quot;}&gt; Contained&lt;/Button&gt;
+        &lt;Button
+          styles={Clx(&quot;$buttonStyles.outlined&quot;, {
+ 
+          })}
+        &gt;
+          Outlined
+        &lt;/Button&gt;
+
+        &lt;Button styles={&quot;$buttonStyles.text&quot;}&gt; Text&lt;/Button&gt;
+      &lt;/Box&gt;
+      &lt;Box
+        styles={{
+          base: `
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      gap:20px;
+      align-items:center;
+      
+      `,
+        }}
+      &gt;
+        &lt;Button styles={&quot;$buttonStyles.containedMedium&quot;}&gt;Medium&lt;/Button&gt;
+        &lt;Button styles={&quot;$buttonStyles.outLinedMedium&quot;}&gt;Medium&lt;/Button&gt;
+        &lt;Button styles={&quot;$buttonStyles.textMedium&quot;}&gt;Medium&lt;/Button&gt;
+      &lt;/Box&gt;
+      &lt;Box
+        styles={{
+          base: `
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      gap:20px;
+      align-items:center;
+      
+      `,
+        }}
+      &gt;
+        &lt;Button styles={&quot;$buttonStyles.containedSmall&quot;}&gt;Small&lt;/Button&gt;
+        &lt;Button styles={&quot;$buttonStyles.outLinedSmall&quot;}&gt;Small&lt;/Button&gt;
+        &lt;Button styles={&quot;$buttonStyles.textSmall&quot;}&gt;Small&lt;/Button&gt;
+      &lt;/Box&gt;
+
+    &lt;/Box&gt;</code></pre><pre class="bg-gray-800 text-white rounded-xl p-4 overflow-auto max-h-[400px] w-full no-scrollbar color-box absolute inset-0 h-full opacity-0 transform translate-y-full shadow-md"><code class="block whitespace-pre">
+ &lt;Box
+        styles={{
+          base: `
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+          `,
+        }}
+      &gt;
+        &lt;Button
+          onClick={() =&gt; toggleScreenSize(&quot;sm&quot;)}
+          styles={{
+            base: `
+              background-color: ${screenSize === &quot;sm&quot; ? &quot;#0047AB&quot; : &quot;#C8C8C8&quot;};
+              color: white;
+              padding: 10px 20px;
+              border-radius: 5px;
+              font-weight: bold;
+              transition: background-color 0.3s ease;
+
+              &amp;:hover {
+                background-color: ${screenSize === &quot;sm&quot; ? &quot;#00008B&quot; : &quot;#E0E0E0&quot;};
+              }
+            `,
+          }}
+        &gt;
+          Mobile
+        &lt;/Button&gt;
+        &lt;Button
+          onClick={() =&gt; toggleScreenSize(&quot;lg&quot;)}
+          styles={{
+            base: `
+              background-color: ${screenSize === &quot;lg&quot; ? &quot;#0047AB&quot; : &quot;#C8C8C8&quot;};
+              color: white;
+              padding: 10px 20px;
+              border-radius: 5px;
+              font-weight: bold;
+              transition: background-color 0.3s ease;
+
+              &amp;:hover {
+                background-color: ${screenSize === &quot;lg&quot; ? &quot;#00008B&quot; : &quot;#E0E0E0&quot;};
+              }
+            `,
+          }}
+        &gt;
+          Desktop
+        &lt;/Button&gt;
+      &lt;/Box&gt;
+
+      {/* Main Card */}
+      &lt;Box
+        styles={{
+          base: `
+            display: grid;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            font-size: 14px; 
+            border-radius: 20px;
+            margin: auto;
+           
+            ${
+              screenSize === &quot;lg&quot;
+                ? `
+                  width: 50%;
+                  grid-template-columns: 0.5fr 1fr;
+                  grid-template-rows: repeat(2, 1fr);
+                  grid-template-areas: 
+                    &quot;a b&quot;
+                    &quot;a c&quot;;
+                `
+                : `
+                  width: 350px; 
+                  grid-template-columns: 1fr;
+                  grid-template-rows: auto;
+                  gap: 10px;
+                  grid-template-areas: 
+                    &quot;a&quot;
+                    &quot;b&quot;
+                    &quot;c&quot;;
+                `
+            }
+          `,
+        }}
+      &gt;
+        &lt;Box
+          styles={{
+            base: `
+              grid-area: a;
+            `,
+          }}
+        &gt;
+          &lt;Image
+            src=&quot;https://cdn.pixelspray.io/v2/black-bread-289bfa/XUefL6/wrkr/t.resize(h:1355,w:1080)/data/mothercare/02-july-2022/410317164_Z003_1.jpg&quot;
+            alt=&quot;Card Image&quot;
+            styles={{
+              base: `
+                ${
+                  screenSize === &quot;sm&quot;
+                    ? &quot;width: 100%; object-fit:cover; height:200px; border-radius: 20px 20px 0px 0px;&quot;
+                    : &quot;border-radius: 20px 0px 0px 20px;&quot;
+                }
+              `,
+            }}
+          /&gt;
+        &lt;/Box&gt;
+
+        &lt;Box
+          styles={{
+            base: `
+              grid-area: b;
+              padding: 10px 20px; 
+             
+              border-bottom: 1px solid gray; 
+            `,
+          }}
+        &gt;
+          &lt;Box
+            styles={{
+              base: `
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              `,
+            }}
+          &gt;
+            &lt;Box
+              styles={{
+                base: `
+                  display: flex;
+                  justify-content: space-between;
+                  ${
+                    screenSize === &quot;sm&quot;
+                      ? &quot;gap: 10px;&quot;
+                      : &quot;&quot;
+                  }
+                `,
+              }}
+            &gt;
+              &lt;Text
+                styles={{
+                  base: `
+                    font-size: ${screenSize === &quot;sm&quot; ? &quot;16px&quot; : &quot;20px&quot;};
+                    font-weight: bold;
+                  `,
+                }}
+              &gt;
+                Regular Fit
+              &lt;/Text&gt;
+              &lt;Text
+                styles={{
+                  base: `
+                    font-size: ${screenSize === &quot;sm&quot; ? &quot;16px&quot; : &quot;20px&quot;};
+                    color: gray;
+                  `,
+                }}
+              &gt;
+                $110.00
+              &lt;/Text&gt;
+            &lt;/Box&gt;
+
+            &lt;Box
+              styles={{
+                base: `
+                  display: flex;
+                  flex-direction: column;
+                  gap: 20px;
+                `,
+              }}
+            &gt;
+              &lt;Text styles={{
+                base:`
+                  color:gray;
+                `,
+              }}&gt;In stock&lt;/Text&gt;
+              &lt;Box
+                styles={{
+                  base: `
+                    display: flex;
+                    
+                    ${
+                      screenSize === &quot;sm&quot; ? &quot;gap: 10px;flex-wrap: wrap;&quot; : &quot;gap: 20px;&quot;
+                    }
+                  `,
+                }}
+              &gt;
+                &lt;Button
+                  styles={{
+                    base: `
+                      background-color: #0047AB;
+                      padding: 5px;
+                      border-radius: 5px;
+                      color: white;
+                    `,
+                  }}
+                &gt;
+                  XS
+                &lt;/Button&gt;
+                &lt;Button styles={{ base: padding: 5px; }}&gt;S&lt;/Button&gt;
+                &lt;Button styles={{ base: padding: 5px; }}&gt;M&lt;/Button&gt;
+                &lt;Button styles={{ base: padding: 5px; }}&gt;L&lt;/Button&gt;
+                &lt;Button styles={{ base: padding: 5px; }}&gt;XL&lt;/Button&gt;
+              &lt;/Box&gt;
+            &lt;/Box&gt;
+          &lt;/Box&gt;
+        &lt;/Box&gt;
+
+        &lt;Box
+          styles={{
+            base: `
+              grid-area: c;
+              padding: 20px 20px;
+             
+            `,
+          }}
+        &gt;
+          &lt;Box
+            styles={{
+              base: `
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+              `,
+            }}
+          &gt;
+            &lt;Box
+              styles={{
+                base: `
+                  display: flex;
+                  justify-content: space-between;
+                  ${
+                    screenSize === &quot;sm&quot;
+                      ? &quot;gap: 10px;&quot;
+                      : &quot;&quot;
+                  }
+                `,
+              }}
+            &gt;
+              &lt;Box
+                styles={{
+                  base: `
+                    display: flex;
+                    gap: 10px;
+                  `,
+                }}
+              &gt;
+                &lt;Button
+                  styles={{
+                    base: `
+                      background-color: #0047AB;
+                      color: white;
+                      font-weight: bold;
+                      padding: 10px 15px;
+                      border-radius: 10px;
+
+
+                      &amp;:hover {
+                          background-color:#00008B;
+                          transition: background-color 0.8s ease; 
+                        }
+
+                        &amp; {
+                          transition: background-color 0.8s ease; 
+                        }
+                    `,
+                  }}
+                &gt;
+                  Buy now
+                &lt;/Button&gt;
+
+                &lt;Button
+                  styles={{
+                    base: `
+                      border: 1px solid black;
+                      font-weight: bold;
+                      padding: 10px 15px;
+                      border-radius: 10px;
+                      
+                      &amp;:hover {
+                          background-color:#F0F0F0;
+                          transition: background-color 0.8s ease; 
+                        }
+
+                        &amp; {
+                          transition: background-color 0.8s ease;                         }
+
+                    `,
+                  }}
+                &gt;
+                  Add to cart
+                &lt;/Button&gt;
+              &lt;/Box&gt;
+
+              &lt;Button styles={{
+                base:`
+                  border:1px solid gray;
+                  padding:0px 15px;
+                  border-radius:10px;
+                `
+              }}&gt;
+               &lt;FaHeart style={{ color: &quot;gray&quot; }} /&gt;
+            &lt;/Button&gt;
+            &lt;/Box&gt;
+            &lt;Text&gt;Free shipping on all continental US orders.&lt;/Text&gt;
+          &lt;/Box&gt;
+        &lt;/Box&gt;
+      &lt;/Box&gt;
+  </code></pre><pre class="bg-gray-800 text-white rounded-xl p-4 overflow-auto max-h-[400px] w-full no-scrollbar color-box absolute inset-0 h-full opacity-0 transform translate-y-full shadow-md"><code class="block whitespace-pre">
+  &lt;Box
+    styles={{
+      base: `
+        width: 400px;
+        margin: auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background: white;
+        text-align: center;
+      `,
+    }}
+  &gt;
+    &lt;Text
+      styles={{
+        base: `
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 20px;
+        `,
+      }}
+    &gt;
+      Sign In With
+    &lt;/Text&gt;
+    
+    &lt;Box
+      styles={{
+        base: `
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-bottom: 20px;
+        `,
+      }}
+    &gt;
+      {/* GitHub Button */}
+      &lt;Button
+        styles={{
+          base: `
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 30px;
+            background: ${activeButton === &quot;github&quot; ? &quot;#4285f4&quot; : &quot;white&quot;};
+            color: ${activeButton === &quot;github&quot; ? &quot;white&quot; : &quot;#000&quot;};
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+          `,
+          hover: `
+            background: #4285f4;
+            color: white;
+          `,
+        }}
+        onClick={() =&gt; setActiveButton(&quot;github&quot;)}
+      &gt;
+        &lt;FaGithub style={{ marginRight: &quot;10px&quot; }} /&gt;
+        GitHub
+      &lt;/Button&gt;
+  
+      {/* Google Button */}
+      &lt;Button
+        styles={{
+          base: `
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 30px;
+            background: ${activeButton === &quot;google&quot; ? &quot;#4285f4&quot; : &quot;white&quot;};
+            color: ${activeButton === &quot;google&quot; ? &quot;white&quot; : &quot;#000&quot;};
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+          `,
+          hover: `
+            background: #4285f4;
+            color: white;
+          `,
+        }}
+        onClick={() =&gt; setActiveButton(&quot;google&quot;)}
+      &gt;
+        &lt;FcGoogle style={{ marginRight: &quot;10px&quot; }} /&gt;
+        Google
+      &lt;/Button&gt;
+    &lt;/Box&gt;
+  
+    &lt;form onSubmit={handleFormSubmit}&gt;
+      &lt;Box
+        styles={{
+          base: `
+            margin-bottom: 20px;
+          `,
+        }}
+      &gt;
+        {/* Username Input */}
+        &lt;Text
+          styles={{
+            base: `
+              text-align: left;
+              margin-bottom: 5px;
+              font-weight: bold;
+            `,
+          }}
+        &gt;
+          Username
+        &lt;/Text&gt;
+        &lt;Input
+          type=&quot;text&quot;
+          name=&quot;username&quot;
+          value={formData.username}
+          onChange={handleChange}
+          placeholder=&quot;Enter your username&quot;
+          styles={{
+            base: `
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              margin-bottom: 10px;
+            `,
+          }}
+        /&gt;
+  
+        {/* Password Input */}
+        &lt;Text
+          styles={{
+            base: `
+              text-align: left;
+              margin-bottom: 5px;
+              font-weight: bold;
+            `,
+          }}
+        &gt;
+          Password
+        &lt;/Text&gt;
+        &lt;Input
+          type=&quot;password&quot;
+          name=&quot;password&quot;
+          value={formData.password}
+          onChange={handleChange}
+          placeholder=&quot;Enter your password&quot;
+          styles={{
+            base: `
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+            `,
+          }}
+        /&gt;
+      &lt;/Box&gt;
+  
+      &lt;Box
+        styles={{
+          base: `
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          `,
+        }}
+      &gt;
+        {/* Forgot Password */}
+        &lt;Text
+          styles={{
+            base: `
+              font-size: 0.9rem;
+              color: #007BFF;
+              cursor: pointer;
+              text-decoration: underline;
+            `,
+          }}
+          onClick={handleForgotPassword}
+        &gt;
+          Forgot password?
+        &lt;/Text&gt;
+  
+        {/* Sign In Button */}
+        &lt;Button
+          type=&quot;submit&quot;
+          styles={{
+            base: `
+              padding: 10px 40px;
+              background: #3169DA;
+              color: white;
+              border-radius: 5px;
+              font-size: 1rem;
+              font-weight: bold;
+              cursor: pointer;
+            `,
+          }}
+        &gt;
+          Sign In
+        &lt;/Button&gt;
+      &lt;/Box&gt;
+    &lt;/form&gt;
+  
+    {/* Sign Up Link */}
+    &lt;Text
+      styles={{
+        base: `
+          margin-top: 20px;
+          font-size: 0.9rem;
+        `,
+      }}
+    &gt;
+      Don&#x27;t have an account?{&quot; &quot;}
+      &lt;Text
+        styles={{
+          base: `
+            color: #007BFF;
+            text-decoration: underline;
+            cursor: pointer;
+          `,
+        }}
+        onClick={handleSignUp}
+      &gt;
+        Sign Up
+      &lt;/Text&gt;
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+  </code></pre></div></div></div></div><div class="md:hidden block"><div class="backdrop-blur-xl p-5"><div class="flex flex-col gap-6 items-start justify-start"><div class="w-full flex flex-col gap-4"><div class="flex items-center justify-center"><div class="flex flex-col gap-5 justify-center items-center bg-white/10 border-none rounded-[30px] backdrop-blur-3xl md:p-20 p-5 shadow-md"><div class="flex flex-row gap-4"><button class="rounded-[8px] border-none px-[20px] py-[10px] bg-[#1174BC] text-[20px] cursor-pointer text-white">Contained</button><button class="border-2 rounded-[8px] border-[#1174BC] px-[20px] py-[10px] bg-transparent text-[20px] cursor-pointer text-[#1174BC] hover:bg-[#1174BC] hover:text-white">Outlined</button><button class="border-none bg-transparent text-[20px] cursor-pointer text-[#1174BC]">Text</button></div><div class="flex flex-row gap-4"><button class="rounded-[8px] border-none px-[20px] py-[10px] bg-[#1174BC] text-[16px] cursor-pointer text-white">Medium</button><button class="border-2 rounded-[8px] border-[#1174BC] px-[20px] py-[10px] bg-transparent text-[16px] cursor-pointer text-[#0071E3] hover:bg-[#1174BC] hover:text-white">Medium</button><button class="border-none bg-transparent text-[16px] cursor-pointer text-[#1174BC]">Medium</button></div><div class="flex flex-row gap-4"><button class="rounded-[8px] border-none px-[15px] py-[8px] bg-[#1174BC] text-[14px] cursor-pointer text-white">Small</button><button class="border-2 rounded-[8px] border-[#1174BC] px-[15px] py-[8px] bg-transparent text-[14px] cursor-pointer text-[#1174BC] hover:bg-[#1174BC] hover:text-white">Small</button><button class="border-none bg-transparent text-[14px] cursor-pointer text-[#1174BC]">Small</button></div></div></div><pre class="bg-gray-800 text-white rounded-xl p-4 overflow-auto max-h-[400px] w-full no-scrollbar shadow-md"><code class="block whitespace-pre">&lt;Box
+      styles={{
+        base: `
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:20px;
+      align-items:center;
+      height:100vh;`,
+      }}
+    &gt;
+      &lt;Box
+        styles={{
+          base:`
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      gap:20px;
+      align-items:center; `,
+        }}
+      &gt;
+        &lt;Button styles={&quot;$buttonStyles.contained&quot;}&gt; Contained&lt;/Button&gt;
+        &lt;Button
+          styles={Clx(&quot;$buttonStyles.outlined&quot;, {
+ 
+          })}
+        &gt;
+          Outlined
+        &lt;/Button&gt;
+
+        &lt;Button styles={&quot;$buttonStyles.text&quot;}&gt; Text&lt;/Button&gt;
+      &lt;/Box&gt;
+      &lt;Box
+        styles={{
+          base: `
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      gap:20px;
+      align-items:center;
+      
+      `,
+        }}
+      &gt;
+        &lt;Button styles={&quot;$buttonStyles.containedMedium&quot;}&gt;Medium&lt;/Button&gt;
+        &lt;Button styles={&quot;$buttonStyles.outLinedMedium&quot;}&gt;Medium&lt;/Button&gt;
+        &lt;Button styles={&quot;$buttonStyles.textMedium&quot;}&gt;Medium&lt;/Button&gt;
+      &lt;/Box&gt;
+      &lt;Box
+        styles={{
+          base: `
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      gap:20px;
+      align-items:center;
+      
+      `,
+        }}
+      &gt;
+        &lt;Button styles={&quot;$buttonStyles.containedSmall&quot;}&gt;Small&lt;/Button&gt;
+        &lt;Button styles={&quot;$buttonStyles.outLinedSmall&quot;}&gt;Small&lt;/Button&gt;
+        &lt;Button styles={&quot;$buttonStyles.textSmall&quot;}&gt;Small&lt;/Button&gt;
+      &lt;/Box&gt;
+
+    &lt;/Box&gt;</code></pre></div><div class="w-full flex flex-col gap-4"><div class="flex items-center justify-center"><div class="flex flex-col items-center justify-center"><div class="flex justify-center gap-5 mb-5"><button class="bg-blue-800 hover:bg-blue-900 text-white py-2 px-5 rounded font-bold transition-colors duration-300 cursor-pointer">Mobile</button><button class="bg-gray-300 text-white py-2 px-5 rounded font-bold transition-colors duration-300 cursor-pointer">Desktop</button></div><div class="grid shadow-lg rounded-2xl mx-auto text-sm w-[350px] grid-cols-1 grid-rows-auto gap-2"><div class="col-span-1 rounded-t-2xl"><img src="https://cdn.pixelspray.io/v2/black-bread-289bfa/XUefL6/wrkr/t.resize(h:1355,w:1080)/data/mothercare/02-july-2022/410317164_Z003_1.jpg" alt="Card Image" class="w-full object-cover h-[200px] rounded-t-2xl"></div><div class="col-span-1 p-5 border-b border-gray-300"><div class="flex flex-col gap-2"><div class="flex justify-between"><h2 class="font-bold text-lg">Title</h2><span class="text-gray-500 text-lg">$110.00</span></div><div class="flex flex-col gap-5"><span class="text-gray-500">In stock</span><div class="flex gap-2 flex-wrap"><button class="bg-blue-800 text-white py-1 px-3 rounded cursor-pointer">XS</button><button class="py-1 px-3 border border-gray-300 cursor-pointer">S</button><button class="py-1 px-3 border border-gray-300 cursor-pointer">M</button><button class="py-1 px-3 border border-gray-300 cursor-pointer">L</button><button class="py-1 px-3 border border-gray-300 cursor-pointer">XL</button></div></div></div></div><div class="col-span-1 py-3 px-5"><div class="flex flex-col gap-7"><div class="flex justify-between"><div class="flex gap-3"><button class="bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-blue-900 cursor-pointer">Buy now</button><button class="border border-black font-bold py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-gray-100 cursor-pointer">Add to cart</button></div><button class="border border-gray-300 py-2 px-4 rounded-lg cursor-pointer"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-gray-500" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg></button></div></div></div></div></div></div><pre class="bg-gray-800 text-white rounded-xl p-4 overflow-auto max-h-[400px] w-full no-scrollbar shadow-md"><code class="block whitespace-pre">
+ &lt;Box
+        styles={{
+          base: `
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+          `,
+        }}
+      &gt;
+        &lt;Button
+          onClick={() =&gt; toggleScreenSize(&quot;sm&quot;)}
+          styles={{
+            base: `
+              background-color: ${screenSize === &quot;sm&quot; ? &quot;#0047AB&quot; : &quot;#C8C8C8&quot;};
+              color: white;
+              padding: 10px 20px;
+              border-radius: 5px;
+              font-weight: bold;
+              transition: background-color 0.3s ease;
+
+              &amp;:hover {
+                background-color: ${screenSize === &quot;sm&quot; ? &quot;#00008B&quot; : &quot;#E0E0E0&quot;};
+              }
+            `,
+          }}
+        &gt;
+          Mobile
+        &lt;/Button&gt;
+        &lt;Button
+          onClick={() =&gt; toggleScreenSize(&quot;lg&quot;)}
+          styles={{
+            base: `
+              background-color: ${screenSize === &quot;lg&quot; ? &quot;#0047AB&quot; : &quot;#C8C8C8&quot;};
+              color: white;
+              padding: 10px 20px;
+              border-radius: 5px;
+              font-weight: bold;
+              transition: background-color 0.3s ease;
+
+              &amp;:hover {
+                background-color: ${screenSize === &quot;lg&quot; ? &quot;#00008B&quot; : &quot;#E0E0E0&quot;};
+              }
+            `,
+          }}
+        &gt;
+          Desktop
+        &lt;/Button&gt;
+      &lt;/Box&gt;
+
+      {/* Main Card */}
+      &lt;Box
+        styles={{
+          base: `
+            display: grid;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            font-size: 14px; 
+            border-radius: 20px;
+            margin: auto;
+           
+            ${
+              screenSize === &quot;lg&quot;
+                ? `
+                  width: 50%;
+                  grid-template-columns: 0.5fr 1fr;
+                  grid-template-rows: repeat(2, 1fr);
+                  grid-template-areas: 
+                    &quot;a b&quot;
+                    &quot;a c&quot;;
+                `
+                : `
+                  width: 350px; 
+                  grid-template-columns: 1fr;
+                  grid-template-rows: auto;
+                  gap: 10px;
+                  grid-template-areas: 
+                    &quot;a&quot;
+                    &quot;b&quot;
+                    &quot;c&quot;;
+                `
+            }
+          `,
+        }}
+      &gt;
+        &lt;Box
+          styles={{
+            base: `
+              grid-area: a;
+            `,
+          }}
+        &gt;
+          &lt;Image
+            src=&quot;https://cdn.pixelspray.io/v2/black-bread-289bfa/XUefL6/wrkr/t.resize(h:1355,w:1080)/data/mothercare/02-july-2022/410317164_Z003_1.jpg&quot;
+            alt=&quot;Card Image&quot;
+            styles={{
+              base: `
+                ${
+                  screenSize === &quot;sm&quot;
+                    ? &quot;width: 100%; object-fit:cover; height:200px; border-radius: 20px 20px 0px 0px;&quot;
+                    : &quot;border-radius: 20px 0px 0px 20px;&quot;
+                }
+              `,
+            }}
+          /&gt;
+        &lt;/Box&gt;
+
+        &lt;Box
+          styles={{
+            base: `
+              grid-area: b;
+              padding: 10px 20px; 
+             
+              border-bottom: 1px solid gray; 
+            `,
+          }}
+        &gt;
+          &lt;Box
+            styles={{
+              base: `
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              `,
+            }}
+          &gt;
+            &lt;Box
+              styles={{
+                base: `
+                  display: flex;
+                  justify-content: space-between;
+                  ${
+                    screenSize === &quot;sm&quot;
+                      ? &quot;gap: 10px;&quot;
+                      : &quot;&quot;
+                  }
+                `,
+              }}
+            &gt;
+              &lt;Text
+                styles={{
+                  base: `
+                    font-size: ${screenSize === &quot;sm&quot; ? &quot;16px&quot; : &quot;20px&quot;};
+                    font-weight: bold;
+                  `,
+                }}
+              &gt;
+                Regular Fit
+              &lt;/Text&gt;
+              &lt;Text
+                styles={{
+                  base: `
+                    font-size: ${screenSize === &quot;sm&quot; ? &quot;16px&quot; : &quot;20px&quot;};
+                    color: gray;
+                  `,
+                }}
+              &gt;
+                $110.00
+              &lt;/Text&gt;
+            &lt;/Box&gt;
+
+            &lt;Box
+              styles={{
+                base: `
+                  display: flex;
+                  flex-direction: column;
+                  gap: 20px;
+                `,
+              }}
+            &gt;
+              &lt;Text styles={{
+                base:`
+                  color:gray;
+                `,
+              }}&gt;In stock&lt;/Text&gt;
+              &lt;Box
+                styles={{
+                  base: `
+                    display: flex;
+                    
+                    ${
+                      screenSize === &quot;sm&quot; ? &quot;gap: 10px;flex-wrap: wrap;&quot; : &quot;gap: 20px;&quot;
+                    }
+                  `,
+                }}
+              &gt;
+                &lt;Button
+                  styles={{
+                    base: `
+                      background-color: #0047AB;
+                      padding: 5px;
+                      border-radius: 5px;
+                      color: white;
+                    `,
+                  }}
+                &gt;
+                  XS
+                &lt;/Button&gt;
+                &lt;Button styles={{ base: padding: 5px; }}&gt;S&lt;/Button&gt;
+                &lt;Button styles={{ base: padding: 5px; }}&gt;M&lt;/Button&gt;
+                &lt;Button styles={{ base: padding: 5px; }}&gt;L&lt;/Button&gt;
+                &lt;Button styles={{ base: padding: 5px; }}&gt;XL&lt;/Button&gt;
+              &lt;/Box&gt;
+            &lt;/Box&gt;
+          &lt;/Box&gt;
+        &lt;/Box&gt;
+
+        &lt;Box
+          styles={{
+            base: `
+              grid-area: c;
+              padding: 20px 20px;
+             
+            `,
+          }}
+        &gt;
+          &lt;Box
+            styles={{
+              base: `
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+              `,
+            }}
+          &gt;
+            &lt;Box
+              styles={{
+                base: `
+                  display: flex;
+                  justify-content: space-between;
+                  ${
+                    screenSize === &quot;sm&quot;
+                      ? &quot;gap: 10px;&quot;
+                      : &quot;&quot;
+                  }
+                `,
+              }}
+            &gt;
+              &lt;Box
+                styles={{
+                  base: `
+                    display: flex;
+                    gap: 10px;
+                  `,
+                }}
+              &gt;
+                &lt;Button
+                  styles={{
+                    base: `
+                      background-color: #0047AB;
+                      color: white;
+                      font-weight: bold;
+                      padding: 10px 15px;
+                      border-radius: 10px;
+
+
+                      &amp;:hover {
+                          background-color:#00008B;
+                          transition: background-color 0.8s ease; 
+                        }
+
+                        &amp; {
+                          transition: background-color 0.8s ease; 
+                        }
+                    `,
+                  }}
+                &gt;
+                  Buy now
+                &lt;/Button&gt;
+
+                &lt;Button
+                  styles={{
+                    base: `
+                      border: 1px solid black;
+                      font-weight: bold;
+                      padding: 10px 15px;
+                      border-radius: 10px;
+                      
+                      &amp;:hover {
+                          background-color:#F0F0F0;
+                          transition: background-color 0.8s ease; 
+                        }
+
+                        &amp; {
+                          transition: background-color 0.8s ease;                         }
+
+                    `,
+                  }}
+                &gt;
+                  Add to cart
+                &lt;/Button&gt;
+              &lt;/Box&gt;
+
+              &lt;Button styles={{
+                base:`
+                  border:1px solid gray;
+                  padding:0px 15px;
+                  border-radius:10px;
+                `
+              }}&gt;
+               &lt;FaHeart style={{ color: &quot;gray&quot; }} /&gt;
+            &lt;/Button&gt;
+            &lt;/Box&gt;
+            &lt;Text&gt;Free shipping on all continental US orders.&lt;/Text&gt;
+          &lt;/Box&gt;
+        &lt;/Box&gt;
+      &lt;/Box&gt;
+  </code></pre></div><div class="w-full flex flex-col gap-4"><div class="flex items-center justify-center"><div class="md:w-[400px] mx-auto p-6 shadow-lg rounded-lg bg-white/5 backdrop-blur-3xl text-center"><p class="text-2xl font-bold">Sign In With</p><div class="flex justify-center gap-4 py-4"><button class="flex items-center justify-center px-8 py-2 bg-white text-black border border-gray-300 rounded-md text-lg hover:bg-[#4285f4] hover:text-white transition-all"><svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
+	c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24
+	c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657
+	C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36
+	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
+	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path></svg>Google</button><button class="flex items-center justify-center px-8 py-2 bg-white text-black border border-gray-300 rounded-md text-lg hover:bg-[#333] hover:text-white transition-all"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>GitHub</button></div><form><div class="mb-6"><label class="block text-left font-semibold mb-2">Email Address</label><input type="email" name="username" placeholder="Email Address" class="w-full p-3 border border-gray-300 rounded-md mb-2"><label class="block text-left font-semibold mb-2">Password</label><input type="password" name="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded-md"></div><div class="flex justify-between items-center"><p class="text-sm text-blue-600 cursor-pointer">Forgot password?</p><button type="submit" class="px-8 py-2 bg-[#3169DA] text-white rounded-md text-lg font-bold cursor-pointer">Sign In</button></div></form><p class="mt-4 text-sm">Don&#x27;t have an account?<!-- --> <span class="text-[#007BFF] underline cursor-pointer">Sign Up</span></p></div></div><pre class="bg-gray-800 text-white rounded-xl p-4 overflow-auto max-h-[400px] w-full no-scrollbar shadow-md"><code class="block whitespace-pre">
+  &lt;Box
+    styles={{
+      base: `
+        width: 400px;
+        margin: auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background: white;
+        text-align: center;
+      `,
+    }}
+  &gt;
+    &lt;Text
+      styles={{
+        base: `
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 20px;
+        `,
+      }}
+    &gt;
+      Sign In With
+    &lt;/Text&gt;
+    
+    &lt;Box
+      styles={{
+        base: `
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-bottom: 20px;
+        `,
+      }}
+    &gt;
+      {/* GitHub Button */}
+      &lt;Button
+        styles={{
+          base: `
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 30px;
+            background: ${activeButton === &quot;github&quot; ? &quot;#4285f4&quot; : &quot;white&quot;};
+            color: ${activeButton === &quot;github&quot; ? &quot;white&quot; : &quot;#000&quot;};
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+          `,
+          hover: `
+            background: #4285f4;
+            color: white;
+          `,
+        }}
+        onClick={() =&gt; setActiveButton(&quot;github&quot;)}
+      &gt;
+        &lt;FaGithub style={{ marginRight: &quot;10px&quot; }} /&gt;
+        GitHub
+      &lt;/Button&gt;
+  
+      {/* Google Button */}
+      &lt;Button
+        styles={{
+          base: `
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 30px;
+            background: ${activeButton === &quot;google&quot; ? &quot;#4285f4&quot; : &quot;white&quot;};
+            color: ${activeButton === &quot;google&quot; ? &quot;white&quot; : &quot;#000&quot;};
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+          `,
+          hover: `
+            background: #4285f4;
+            color: white;
+          `,
+        }}
+        onClick={() =&gt; setActiveButton(&quot;google&quot;)}
+      &gt;
+        &lt;FcGoogle style={{ marginRight: &quot;10px&quot; }} /&gt;
+        Google
+      &lt;/Button&gt;
+    &lt;/Box&gt;
+  
+    &lt;form onSubmit={handleFormSubmit}&gt;
+      &lt;Box
+        styles={{
+          base: `
+            margin-bottom: 20px;
+          `,
+        }}
+      &gt;
+        {/* Username Input */}
+        &lt;Text
+          styles={{
+            base: `
+              text-align: left;
+              margin-bottom: 5px;
+              font-weight: bold;
+            `,
+          }}
+        &gt;
+          Username
+        &lt;/Text&gt;
+        &lt;Input
+          type=&quot;text&quot;
+          name=&quot;username&quot;
+          value={formData.username}
+          onChange={handleChange}
+          placeholder=&quot;Enter your username&quot;
+          styles={{
+            base: `
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              margin-bottom: 10px;
+            `,
+          }}
+        /&gt;
+  
+        {/* Password Input */}
+        &lt;Text
+          styles={{
+            base: `
+              text-align: left;
+              margin-bottom: 5px;
+              font-weight: bold;
+            `,
+          }}
+        &gt;
+          Password
+        &lt;/Text&gt;
+        &lt;Input
+          type=&quot;password&quot;
+          name=&quot;password&quot;
+          value={formData.password}
+          onChange={handleChange}
+          placeholder=&quot;Enter your password&quot;
+          styles={{
+            base: `
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+            `,
+          }}
+        /&gt;
+      &lt;/Box&gt;
+  
+      &lt;Box
+        styles={{
+          base: `
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          `,
+        }}
+      &gt;
+        {/* Forgot Password */}
+        &lt;Text
+          styles={{
+            base: `
+              font-size: 0.9rem;
+              color: #007BFF;
+              cursor: pointer;
+              text-decoration: underline;
+            `,
+          }}
+          onClick={handleForgotPassword}
+        &gt;
+          Forgot password?
+        &lt;/Text&gt;
+  
+        {/* Sign In Button */}
+        &lt;Button
+          type=&quot;submit&quot;
+          styles={{
+            base: `
+              padding: 10px 40px;
+              background: #3169DA;
+              color: white;
+              border-radius: 5px;
+              font-size: 1rem;
+              font-weight: bold;
+              cursor: pointer;
+            `,
+          }}
+        &gt;
+          Sign In
+        &lt;/Button&gt;
+      &lt;/Box&gt;
+    &lt;/form&gt;
+  
+    {/* Sign Up Link */}
+    &lt;Text
+      styles={{
+        base: `
+          margin-top: 20px;
+          font-size: 0.9rem;
+        `,
+      }}
+    &gt;
+      Don&#x27;t have an account?{&quot; &quot;}
+      &lt;Text
+        styles={{
+          base: `
+            color: #007BFF;
+            text-decoration: underline;
+            cursor: pointer;
+          `,
+        }}
+        onClick={handleSignUp}
+      &gt;
+        Sign Up
+      &lt;/Text&gt;
+    &lt;/Text&gt;
+  &lt;/Box&gt;
+  </code></pre></div></div></div></div></div></div><div><div class="h-[320vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:800px] [transform-style:preserve-3d]"><div class="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0"><h1 class="text-2xl md:text-7xl font-bold dark:text-white">The Ultimate <br> development studio</h1><p class="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">We build beautiful products with the latest technologies and frameworks. We are a team of passionate developers and designers that love to build amazing products.</p></div><div style="opacity:0.2;transform:translateY(-700px) rotateX(15deg) rotateZ(10deg)"><div class="flex flex-row-reverse space-x-reverse space-x-20 mb-20"><div style="transform:none" class="group/product h-96 w-[40rem] relative flex-shrink-0"><a href="https://laverne.vercel.app/" target="_blank" class="block group-hover/product:shadow-2xl"><img src="https://res.cloudinary.com/dftbmgzn1/image/upload/v1736143578/LaverneHomePage_lupytq.png" height="600" width="600" class="object-cover object-left-top absolute h-full w-full inset-0" alt="Laverne Resorts"></a><div class="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div><h2 class="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">Laverne Resorts</h2></div><div style="transform:none" class="group/product h-96 w-[40rem] relative flex-shrink-0"><a href="https://www.vithiit.com/" target="_blank" class="block group-hover/product:shadow-2xl"><img src="https://res.cloudinary.com/dftbmgzn1/image/upload/v1736143131/VithiHomePage_tusfhm.png" height="600" width="600" class="object-cover object-left-top absolute h-full w-full inset-0" alt="Vithi IT Solutions"></a><div class="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div><h2 class="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">Vithi IT Solutions</h2></div><div style="transform:none" class="group/product h-96 w-[40rem] relative flex-shrink-0"><a href="https://mercuryjs.dev/" target="_blank" class="block group-hover/product:shadow-2xl"><img src="https://res.cloudinary.com/dftbmgzn1/image/upload/v1735892530/mercuryLandingPage_l7x6iz.png" height="600" width="600" class="object-cover object-left-top absolute h-full w-full inset-0" alt="Mercury Dev"></a><div class="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div><h2 class="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">Mercury Dev</h2></div><div style="transform:none" class="group/product h-96 w-[40rem] relative flex-shrink-0"><a href="https://laverne.vercel.app/" target="_blank" class="block group-hover/product:shadow-2xl"><img src="https://res.cloudinary.com/dftbmgzn1/image/upload/v1736143578/LaverneHomePage_lupytq.png" height="600" width="600" class="object-cover object-left-top absolute h-full w-full inset-0" alt="Laverne Resorts"></a><div class="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div><h2 class="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">Laverne Resorts</h2></div><div style="transform:none" class="group/product h-96 w-[40rem] relative flex-shrink-0"><a href="https://mercuryjs.dev/" target="_blank" class="block group-hover/product:shadow-2xl"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736237088/Group_143726152_1_xh7ev8.png" height="600" width="600" class="object-cover object-left-top absolute h-full w-full inset-0" alt="Why Choose Mercury?"></a><div class="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div><h2 class="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">Why Choose Mercury?</h2></div></div><div class="flex flex-row mb-20 space-x-20"><div style="transform:none" class="group/product h-96 w-[40rem] relative flex-shrink-0"><a href="https://mercuryjs.dev/" target="_blank" class="block group-hover/product:shadow-2xl"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736237088/Group_143726152_1_xh7ev8.png" height="600" width="600" class="object-cover object-left-top absolute h-full w-full inset-0" alt="Why Choose Mercury?"></a><div class="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div><h2 class="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">Why Choose Mercury?</h2></div><div style="transform:none" class="group/product h-96 w-[40rem] relative flex-shrink-0"><a href="https://www.vithiit.com/" target="_blank" class="block group-hover/product:shadow-2xl"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736237101/Group_143726152_nqek5l.png" height="600" width="600" class="object-cover object-left-top absolute h-full w-full inset-0" alt="Vithi IT Solutions"></a><div class="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div><h2 class="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">Vithi IT Solutions</h2></div><div style="transform:none" class="group/product h-96 w-[40rem] relative flex-shrink-0"><a href="https://mercuryjs.dev/" target="_blank" class="block group-hover/product:shadow-2xl"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736237088/Group_143726152_1_xh7ev8.png" height="600" width="600" class="object-cover object-left-top absolute h-full w-full inset-0" alt="Why Choose Mercury?"></a><div class="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div><h2 class="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">Why Choose Mercury?</h2></div><div style="transform:none" class="group/product h-96 w-[40rem] relative flex-shrink-0"><a href="https://www.vithiit.com/" target="_blank" class="block group-hover/product:shadow-2xl"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736237101/Group_143726152_nqek5l.png" height="600" width="600" class="object-cover object-left-top absolute h-full w-full inset-0" alt="Vithi IT Solutions"></a><div class="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div><h2 class="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">Vithi IT Solutions</h2></div></div><div class="flex flex-row-reverse space-x-reverse space-x-20"></div></div></div></div><div class="h-[100vh] w-full bg-neutral-950 relative flex flex-col items-center justify-center z-50 no-scrollbar"><div class="absolute z-10"><div><div class="max-w-[20rem] md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-10 z-50 rounded-[20px] border-2 border-blue-800"><div class="relative grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-10"><div><div class="relative h-80 w-full"><div class="absolute inset-0 origin-bottom" style="opacity:0;transform:translateZ(-100px) scale(0.9) rotate(-6deg)"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736230601/RoshankPhoto_a5ihdo.jpg" alt="Roshan Kumar Gujarathi" width="500" height="500" draggable="false" class="h-full w-full rounded-3xl object-cover object-center"></div><div class="absolute inset-0 origin-bottom" style="opacity:0;transform:translateZ(-100px) scale(0.9) rotate(-9deg)"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736417751/praveen_hijvgl.jpg" alt="Praveen vuddagiri" width="500" height="500" draggable="false" class="h-full w-full rounded-3xl object-cover object-center"></div><div class="absolute inset-0 origin-bottom" style="opacity:0;transform:translateZ(-100px) scale(0.9) rotate(4deg)"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736228451/AvinashPhoto_zfe1iy.jpg" alt="Avinash Koduri" width="500" height="500" draggable="false" class="h-full w-full rounded-3xl object-cover object-center"></div><div class="absolute inset-0 origin-bottom" style="opacity:0;transform:translateZ(-100px) scale(0.9) rotate(4deg)"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736229238/ManikantaPhoto_2_lxqkn4.jpg" alt="Manikanta Kurapati" width="500" height="500" draggable="false" class="h-full w-full rounded-3xl object-cover object-center"></div><div class="absolute inset-0 origin-bottom" style="opacity:0;transform:translateZ(-100px) scale(0.9)"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736229249/ManisudheeePhoto_orj8iz.jpg" alt="Mani Sudheer Yadlapalli" width="500" height="500" draggable="false" class="h-full w-full rounded-3xl object-cover object-center"></div><div class="absolute inset-0 origin-bottom" style="opacity:0;transform:translateZ(-100px) scale(0.9)"><img src="https://res.cloudinary.com/dystdzzi0/image/upload/v1736235100/IMG_20240609_192728_biziyx.jpg" alt="Sowmya Boorla" width="500" height="500" draggable="false" class="h-full w-full rounded-3xl object-cover object-center"></div></div></div><div class="flex justify-between flex-col py-4"><div style="opacity:0;transform:translateY(20px)"><h3 class="text-2xl font-bold text-white">Roshan Kumar Gujarathi</h3><p class="text-sm text-gray-400 mb-0">Artructure  of Mercury </p><p class="text-lg text-gray-300 md:mt-8 mt-2"><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">An<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">experienced<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">visionary,<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">the<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">founder<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">of<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">Mercury<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">embodies<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">the<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">spirit<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">of<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">innovation,<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">transforming<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">challenges<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">into<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">opportunities<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">and<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">inspiring<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">others<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">to<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">reach<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">for<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">the<!-- --> </span><span class="inline-block" style="filter:blur(10px);opacity:0;transform:translateY(5px)">stars.<!-- --> </span></p></div><div class="flex gap-4 md:pt-0"><button class="h-7 w-7 rounded-full bg-gray-800 flex items-center justify-center group/button cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-left h-5 w-5 text-white group-hover/button:rotate-12 transition-transform duration-300"><path d="M5 12l14 0"></path><path d="M5 12l6 6"></path><path d="M5 12l6 -6"></path></svg></button><button class="h-7 w-7 rounded-full bg-gray-800 flex items-center justify-center group/button cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-right h-5 w-5 text-white group-hover/button:-rotate-12 transition-transform duration-300"><path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"></path></svg></button></div></div></div></div></div></div><div class="absolute h-[100vh] w-full inset-0 [mask-size:40px] [mask-repeat:no-repeat] flex items-center justify-center"><svg class="z-0 h-full w-full pointer-events-none absolute" width="100%" height="100%" viewBox="0 0 696 316" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867M-366 -205C-366 -205 -298 200 166 327C630 454 698 859 698 859M-359 -213C-359 -213 -291 192 173 319C637 446 705 851 705 851M-352 -221C-352 -221 -284 184 180 311C644 438 712 843 712 843M-345 -229C-345 -229 -277 176 187 303C651 430 719 835 719 835M-338 -237C-338 -237 -270 168 194 295C658 422 726 827 726 827M-331 -245C-331 -245 -263 160 201 287C665 414 733 819 733 819M-324 -253C-324 -253 -256 152 208 279C672 406 740 811 740 811M-317 -261C-317 -261 -249 144 215 271C679 398 747 803 747 803M-310 -269C-310 -269 -242 136 222 263C686 390 754 795 754 795M-303 -277C-303 -277 -235 128 229 255C693 382 761 787 761 787M-296 -285C-296 -285 -228 120 236 247C700 374 768 779 768 779M-289 -293C-289 -293 -221 112 243 239C707 366 775 771 775 771M-282 -301C-282 -301 -214 104 250 231C714 358 782 763 782 763M-275 -309C-275 -309 -207 96 257 223C721 350 789 755 789 755M-268 -317C-268 -317 -200 88 264 215C728 342 796 747 796 747M-261 -325C-261 -325 -193 80 271 207C735 334 803 739 803 739M-254 -333C-254 -333 -186 72 278 199C742 326 810 731 810 731M-247 -341C-247 -341 -179 64 285 191C749 318 817 723 817 723M-240 -349C-240 -349 -172 56 292 183C756 310 824 715 824 715M-233 -357C-233 -357 -165 48 299 175C763 302 831 707 831 707M-226 -365C-226 -365 -158 40 306 167C770 294 838 699 838 699M-219 -373C-219 -373 -151 32 313 159C777 286 845 691 845 691M-212 -381C-212 -381 -144 24 320 151C784 278 852 683 852 683M-205 -389C-205 -389 -137 16 327 143C791 270 859 675 859 675M-198 -397C-198 -397 -130 8 334 135C798 262 866 667 866 667M-191 -405C-191 -405 -123 0 341 127C805 254 873 659 873 659M-184 -413C-184 -413 -116 -8 348 119C812 246 880 651 880 651M-177 -421C-177 -421 -109 -16 355 111C819 238 887 643 887 643M-170 -429C-170 -429 -102 -24 362 103C826 230 894 635 894 635M-163 -437C-163 -437 -95 -32 369 95C833 222 901 627 901 627M-156 -445C-156 -445 -88 -40 376 87C840 214 908 619 908 619M-149 -453C-149 -453 -81 -48 383 79C847 206 915 611 915 611M-142 -461C-142 -461 -74 -56 390 71C854 198 922 603 922 603M-135 -469C-135 -469 -67 -64 397 63C861 190 929 595 929 595M-128 -477C-128 -477 -60 -72 404 55C868 182 936 587 936 587M-121 -485C-121 -485 -53 -80 411 47C875 174 943 579 943 579M-114 -493C-114 -493 -46 -88 418 39C882 166 950 571 950 571M-107 -501C-107 -501 -39 -96 425 31C889 158 957 563 957 563M-100 -509C-100 -509 -32 -104 432 23C896 150 964 555 964 555M-93 -517C-93 -517 -25 -112 439 15C903 142 971 547 971 547M-86 -525C-86 -525 -18 -120 446 7C910 134 978 539 978 539M-79 -533C-79 -533 -11 -128 453 -1C917 126 985 531 985 531M-72 -541C-72 -541 -4 -136 460 -9C924 118 992 523 992 523M-65 -549C-65 -549 3 -144 467 -17C931 110 999 515 999 515M-58 -557C-58 -557 10 -152 474 -25C938 102 1006 507 1006 507M-51 -565C-51 -565 17 -160 481 -33C945 94 1013 499 1013 499M-44 -573C-44 -573 24 -168 488 -41C952 86 1020 491 1020 491M-37 -581C-37 -581 31 -176 495 -49C959 78 1027 483 1027 483M-30 -589C-30 -589 38 -184 502 -57C966 70 1034 475 1034 475M-23 -597C-23 -597 45 -192 509 -65C973 62 1041 467 1041 467M-16 -605C-16 -605 52 -200 516 -73C980 54 1048 459 1048 459M-9 -613C-9 -613 59 -208 523 -81C987 46 1055 451 1055 451M-2 -621C-2 -621 66 -216 530 -89C994 38 1062 443 1062 443M5 -629C5 -629 73 -224 537 -97C1001 30 1069 435 1069 435M12 -637C12 -637 80 -232 544 -105C1008 22 1076 427 1076 427M19 -645C19 -645 87 -240 551 -113C1015 14 1083 419 1083 419" stroke="url(#paint0_radial_242_278)" stroke-opacity="0.05" stroke-width="0.5"></path><path d="M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875" stroke="url(#linearGradient-0)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867" stroke="url(#linearGradient-1)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-366 -205C-366 -205 -298 200 166 327C630 454 698 859 698 859" stroke="url(#linearGradient-2)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-359 -213C-359 -213 -291 192 173 319C637 446 705 851 705 851" stroke="url(#linearGradient-3)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-352 -221C-352 -221 -284 184 180 311C644 438 712 843 712 843" stroke="url(#linearGradient-4)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-345 -229C-345 -229 -277 176 187 303C651 430 719 835 719 835" stroke="url(#linearGradient-5)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-338 -237C-338 -237 -270 168 194 295C658 422 726 827 726 827" stroke="url(#linearGradient-6)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-331 -245C-331 -245 -263 160 201 287C665 414 733 819 733 819" stroke="url(#linearGradient-7)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-324 -253C-324 -253 -256 152 208 279C672 406 740 811 740 811" stroke="url(#linearGradient-8)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-317 -261C-317 -261 -249 144 215 271C679 398 747 803 747 803" stroke="url(#linearGradient-9)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-310 -269C-310 -269 -242 136 222 263C686 390 754 795 754 795" stroke="url(#linearGradient-10)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-303 -277C-303 -277 -235 128 229 255C693 382 761 787 761 787" stroke="url(#linearGradient-11)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-296 -285C-296 -285 -228 120 236 247C700 374 768 779 768 779" stroke="url(#linearGradient-12)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-289 -293C-289 -293 -221 112 243 239C707 366 775 771 775 771" stroke="url(#linearGradient-13)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-282 -301C-282 -301 -214 104 250 231C714 358 782 763 782 763" stroke="url(#linearGradient-14)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-275 -309C-275 -309 -207 96 257 223C721 350 789 755 789 755" stroke="url(#linearGradient-15)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-268 -317C-268 -317 -200 88 264 215C728 342 796 747 796 747" stroke="url(#linearGradient-16)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-261 -325C-261 -325 -193 80 271 207C735 334 803 739 803 739" stroke="url(#linearGradient-17)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-254 -333C-254 -333 -186 72 278 199C742 326 810 731 810 731" stroke="url(#linearGradient-18)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-247 -341C-247 -341 -179 64 285 191C749 318 817 723 817 723" stroke="url(#linearGradient-19)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-240 -349C-240 -349 -172 56 292 183C756 310 824 715 824 715" stroke="url(#linearGradient-20)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-233 -357C-233 -357 -165 48 299 175C763 302 831 707 831 707" stroke="url(#linearGradient-21)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-226 -365C-226 -365 -158 40 306 167C770 294 838 699 838 699" stroke="url(#linearGradient-22)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-219 -373C-219 -373 -151 32 313 159C777 286 845 691 845 691" stroke="url(#linearGradient-23)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-212 -381C-212 -381 -144 24 320 151C784 278 852 683 852 683" stroke="url(#linearGradient-24)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-205 -389C-205 -389 -137 16 327 143C791 270 859 675 859 675" stroke="url(#linearGradient-25)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-198 -397C-198 -397 -130 8 334 135C798 262 866 667 866 667" stroke="url(#linearGradient-26)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-191 -405C-191 -405 -123 0 341 127C805 254 873 659 873 659" stroke="url(#linearGradient-27)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-184 -413C-184 -413 -116 -8 348 119C812 246 880 651 880 651" stroke="url(#linearGradient-28)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-177 -421C-177 -421 -109 -16 355 111C819 238 887 643 887 643" stroke="url(#linearGradient-29)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-170 -429C-170 -429 -102 -24 362 103C826 230 894 635 894 635" stroke="url(#linearGradient-30)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-163 -437C-163 -437 -95 -32 369 95C833 222 901 627 901 627" stroke="url(#linearGradient-31)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-156 -445C-156 -445 -88 -40 376 87C840 214 908 619 908 619" stroke="url(#linearGradient-32)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-149 -453C-149 -453 -81 -48 383 79C847 206 915 611 915 611" stroke="url(#linearGradient-33)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-142 -461C-142 -461 -74 -56 390 71C854 198 922 603 922 603" stroke="url(#linearGradient-34)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-135 -469C-135 -469 -67 -64 397 63C861 190 929 595 929 595" stroke="url(#linearGradient-35)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-128 -477C-128 -477 -60 -72 404 55C868 182 936 587 936 587" stroke="url(#linearGradient-36)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-121 -485C-121 -485 -53 -80 411 47C875 174 943 579 943 579" stroke="url(#linearGradient-37)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-114 -493C-114 -493 -46 -88 418 39C882 166 950 571 950 571" stroke="url(#linearGradient-38)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-107 -501C-107 -501 -39 -96 425 31C889 158 957 563 957 563" stroke="url(#linearGradient-39)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-100 -509C-100 -509 -32 -104 432 23C896 150 964 555 964 555" stroke="url(#linearGradient-40)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-93 -517C-93 -517 -25 -112 439 15C903 142 971 547 971 547" stroke="url(#linearGradient-41)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-86 -525C-86 -525 -18 -120 446 7C910 134 978 539 978 539" stroke="url(#linearGradient-42)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-79 -533C-79 -533 -11 -128 453 -1C917 126 985 531 985 531" stroke="url(#linearGradient-43)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-72 -541C-72 -541 -4 -136 460 -9C924 118 992 523 992 523" stroke="url(#linearGradient-44)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-65 -549C-65 -549 3 -144 467 -17C931 110 999 515 999 515" stroke="url(#linearGradient-45)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-58 -557C-58 -557 10 -152 474 -25C938 102 1006 507 1006 507" stroke="url(#linearGradient-46)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-51 -565C-51 -565 17 -160 481 -33C945 94 1013 499 1013 499" stroke="url(#linearGradient-47)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-44 -573C-44 -573 24 -168 488 -41C952 86 1020 491 1020 491" stroke="url(#linearGradient-48)" stroke-opacity="0.4" stroke-width="0.5"></path><path d="M-37 -581C-37 -581 31 -176 495 -49C959 78 1027 483 1027 483" stroke="url(#linearGradient-49)" stroke-opacity="0.4" stroke-width="0.5"></path><defs><linearGradient id="linearGradient-0" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-1" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-2" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-3" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-4" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-5" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-6" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-7" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-8" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-9" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-10" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-11" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-12" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-13" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-14" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-15" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-16" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-17" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-18" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-19" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-20" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-21" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-22" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-23" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-24" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-25" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-26" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-27" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-28" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-29" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-30" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-31" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-32" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-33" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-34" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-35" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-36" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-37" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-38" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-39" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-40" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-41" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-42" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-43" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-44" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-45" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-46" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-47" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-48" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><linearGradient id="linearGradient-49" x1="0%" x2="0%" y1="0%" y2="0%"><stop stop-color="#18CCFC" stop-opacity="0"></stop><stop stop-color="#18CCFC"></stop><stop offset="32.5%" stop-color="#6344F5"></stop><stop offset="100%" stop-color="#AE48FF" stop-opacity="0"></stop></linearGradient><radialGradient id="paint0_radial_242_278" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(352 34) rotate(90) scale(555 1560.62)"><stop offset="0.0666667" stop-color="var(--neutral-300)"></stop><stop offset="0.243243" stop-color="var(--neutral-300)"></stop><stop offset="0.43594" stop-color="white" stop-opacity="0"></stop></radialGradient></defs></svg></div></div><div><footer class="bg-white/5 backdrop-blur-4xl py-12 px-8"><div class="max-w-7xl mx-auto grid md:grid-cols-5 grid-cols-1 gap-10"><div class="col-span-2"><h3 class="text-2xl text-[20px] font-semibold leading-snug">Subscribe to the Mercury newsletter to stay up-to-date with the latest releases</h3><div class="relative w-full"><input type="email" placeholder="Enter your email" class="border border-gray-300 px-4 py-3 rounded-full w-full text-[16px] font-Manrope-Medium"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-[20px] cursor-pointer" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6 6v2h8.59L5 17.59 6.41 19 16 9.41V18h2V6z"></path></svg></div></div><div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-4"><div class="flex flex-col gap-4"><h4 class="font-semibold mb-0">Company</h4><div class="text-[16px] mb-0 flex flex-col gap-2 cursor-pointer"><a class="mb-0 text-black">Mercury</a><a class="mb-0 text-black">Vithi</a></div></div><div class="flex flex-col gap-4"><h4 class="font-semibold mb-0">Connect</h4><div class="flex flex-col gap-2"><a href="#" class="text-black">GitHub</a><a href="#" class="text-black">LinkedIn</a><a href="#" class="text-black">X</a></div></div></div></div></footer></div></main></div></div></div>
+</body>
+</html>
