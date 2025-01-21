@@ -100,7 +100,7 @@ function HeroBanner() {
             </p>
           </div>
         </div>
-        <AnimatedVisitButton className="animated-button" />
+      <AnimatedVisitButton text="Get Started" />
       </div>
 
     </div>

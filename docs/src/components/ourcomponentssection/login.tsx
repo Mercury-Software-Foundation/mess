@@ -57,7 +57,7 @@ const LoginForm = ({
 
   return (
     <div className="md:w-[400px] mx-auto p-6 shadow-lg rounded-lg bg-white/5 backdrop-blur-3xl text-center ">
-      <p className="text-2xl font-bold">Sign In With</p>
+      <p className="text-2xl font-bold text-black">Sign In With</p>
 
       {/* External Providers */}
       <div className="flex justify-center gap-4 py-4">
@@ -92,7 +92,7 @@ const LoginForm = ({
       {/* Form */}
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-6">
-          <label className="block text-left font-semibold mb-2">
+          <label className="block text-left font-semibold mb-2 text-black">
             {usernameConfig?.label || "Username"}
           </label>
           <input
@@ -102,13 +102,13 @@ const LoginForm = ({
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             placeholder={usernameConfig?.label || "Username"}
-            className="w-full p-3 border border-gray-300 rounded-md mb-2"
+            className="w-full p-3 border border-gray-300 rounded-md mb-2 bg-white"
           />
           {formik.touched.username && formik.errors.username && (
             <p className="text-red-500 text-sm text-left">{formik.errors.username}</p>
           )}
 
-          <label className="block text-left font-semibold mb-2">Password</label>
+          <label className="block text-left font-semibold mb-2 text-black">Password</label>
           <input
             type="password"
             name="password"
@@ -116,7 +116,7 @@ const LoginForm = ({
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             placeholder="Password"
-            className="w-full p-3 border border-gray-300 rounded-md"
+            className="w-full p-3 border border-gray-300 rounded-md bg-white"
           />
           {formik.touched.password && formik.errors.password && (
             <p className="text-red-500 text-sm text-left">{formik.errors.password}</p>
@@ -138,7 +138,7 @@ const LoginForm = ({
       </form>
 
       {config?.showSignUp && (
-        <p className="mt-4 text-sm">
+        <p className="mt-4 text-sm text-black">
           Don't have an account?{" "}
           <span className="text-[#007BFF] underline cursor-pointer">Sign Up</span>
         </p>
