@@ -3,12 +3,12 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Mercury',
+  title: 'Mess',
   tagline: 'Develop at the speed of thought',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://mercuryjs.dev',
+  url: 'https://mess.mercuryjs.dev',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -16,7 +16,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Mercury-Software-Foundation', // Usually your GitHub org/user name.
-  projectName: 'mercury-software-foundation.github.io', // Usually your repo name.
+  projectName: 'mess', // Usually your repo name.
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -80,7 +80,7 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/Mercury-Software-Foundation/mercury-js',
+          href: 'https://github.com/Mercury-Software-Foundation/mess',
           label: 'GitHub',
           position: 'right',
         },
@@ -124,7 +124,7 @@ const config: Config = {
             // },
             {
               label: 'GitHub',
-              href: 'https://github.com/Mercury-Software-Foundation/mercury-js',
+              href: 'https://github.com/Mercury-Software-Foundation/mess',
             },
           ],
         },
