@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: "Mess config"
+title: "Mess Config"
 ---
 
 The `mess.config.js` file is used to define custom configurations for your `mess` package. This file must be placed in the root directory of your project. It allows users to define reusable styles, paddings, and other utilities, enabling consistent styling across the application.

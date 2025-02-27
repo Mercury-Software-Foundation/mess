@@ -83,49 +83,57 @@ export default function Home() {
   ];
   return (
     <MainLayout>
-      <div  className="relative w-full h-[100vh] flex items-center justify-center md:-top-28 -top-16 z-10 overflow-auto no-scrollbar">
+      <div className="relative w-full h-[100vh] flex items-center justify-center md:-top-28 -top-16 z-10 overflow-auto no-scrollbar">
         <HeroBanner />
       </div>
       <div className='h-auto overflow-scroll no-scrollbar '>
 
-      <Section 
-        slides={[
-          { text: <Buttons/> },
-          { text:  <Card/> },
-          { text:   <LoginForm
-            onSubmit={(data) => console.log(data)}
-            externalProviders={[
-              { name: "Google", icon: <FcGoogle />, onClick: handleGoogleLogin },
-              { name: "GitHub", icon: <FaGithub  />, onClick: handleGithubLogin },
-            ]}
-            config={{
-              showGoogle: true,
-              showGithub: true,
-              showForgotPassword: true,
-              showSignUp: true,
-            }}
-            usernameConfig={{
-              label: "Email Address",
-              type: "email",
-            }}
-          />
-           }
-         
-        ]}
-      />
+        <Section
+          slides={[
+            { text: <Buttons /> },
+            { text: <Card /> },
+            {
+              text: <LoginForm
+                onSubmit={(data) => console.log(data)}
+                externalProviders={[
+                  { name: "Google", icon: <FcGoogle />, onClick: handleGoogleLogin },
+                  { name: "GitHub", icon: <FaGithub />, onClick: handleGithubLogin },
+                ]}
+                config={{
+                  showGoogle: true,
+                  showGithub: true,
+                  showForgotPassword: true,
+                  showSignUp: true,
+                }}
+                usernameConfig={{
+                  label: "Email Address",
+                  type: "email",
+                }}
+              />
+            }
+
+          ]}
+        />
       </div>
       <div>
-      <HeroParallaxDemo/>
+        <HeroParallaxDemo />
       </div>
-      <div className="h-[100vh] w-full  bg-neutral-950 relative flex flex-col items-center justify-center z-50 no-scrollbar">
-        <div className="absolute z-10">
-          <AnimatedTestimonials testimonials={testimonials} />
+      <div>
+
+        <div className="h-[50vh] lg:h-[100vh] w-full  bg-neutral-950 relative flex flex-col items-center justify-center z-50 no-scrollbar">
+          <div className="absolute z-10">
+            <AnimatedTestimonials testimonials={testimonials} />
+          </div>
+          <BackgroundBeams />
         </div>
-        <BackgroundBeams />
+        <div >
+          <Footer />
+        </div>
       </div>
       <div>
-        <Footer/>
+     
       </div>
+
     </MainLayout>
   );
 }

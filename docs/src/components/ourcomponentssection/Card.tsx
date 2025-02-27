@@ -31,8 +31,8 @@ function Card() {
       <div
         className={`grid shadow-lg rounded-2xl mx-auto text-sm ${
           screenSize === "lg"
-            ? "w-1/2 grid-cols-3 grid-rows-2 gap-5"
-            : "w-[350px] grid-cols-1 grid-rows-auto gap-2"
+            ? "lg:h-full h-[350px] lg:w-[400px] xl:w-[500px]  grid-cols-3 grid-rows-2 gap-5"
+            : "w-[350px]  grid-cols-1 grid-rows-auto gap-2"
         }`}
       >
        
@@ -72,7 +72,7 @@ function Card() {
             </div>
             <div className="flex flex-col gap-5">
               <span className="text-gray-500">In stock</span>
-              <div className={`flex ${screenSize === "sm" ? "gap-2 flex-wrap" : "gap-5"}`}>
+              <div className={`flex ${screenSize === "sm" ? "gap-2 flex-wrap" : "flex flex-wrap gap-5"}`}>
                 <button className="bg-blue-800 text-white py-1 px-3 rounded cursor-pointer">
                   XS
                 </button>
@@ -93,7 +93,7 @@ function Card() {
           }`}
         >
           <div className="flex flex-col gap-7">
-            <div className="flex justify-between">
+            <div className="flex justify-between gap-2">
               <div className="flex gap-3">
                 <button className="bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-blue-900 cursor-pointer">
                   Buy now

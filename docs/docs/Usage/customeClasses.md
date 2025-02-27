@@ -1,5 +1,5 @@
 ---
-title: "Custome classes properties"
+title: "Custome Classes Properties"
 ---
 Below is the full list of CSS properties 
 

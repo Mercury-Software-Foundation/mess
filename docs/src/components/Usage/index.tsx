@@ -693,7 +693,7 @@ export default function Section({ slides }) {
 
   return (
     <div>
-      <div className="md:block hidden">
+      <div className="lg:block hidden">
         <div className="px-36 h-screen flex items-center justify-center section pin-section">
           <div className="grid grid-cols-2 gap-10 h-full items-center">
             {/* Left Section: Slides */}
@@ -701,7 +701,7 @@ export default function Section({ slides }) {
               {slides.map((slide, index) => (
                 <div
                   key={index}
-                  className="slide center absolute inset-0 opacity-0 transition-opacity duration-300 flex items-center justify-center -ml-[250px] "
+                  className="slide center absolute inset-0 opacity-0 transition-opacity duration-300 flex items-center justify-center -ml-[320px] xl:-ml-[100px] "
                 >
                   {/* <h1 className="text-red-700 bg-white rounded-2xl text-4xl w-[400px] h-[200px] font-bold flex flex-col justify-center text-center"> */}
                   {slide.text}
@@ -711,7 +711,7 @@ export default function Section({ slides }) {
             </div>
 
             {/* Right Section: CodeDisplay */}
-            <div className="relative w-full h-[400px] justify-self-center flex items-center ">
+            <div className="relative w-full lg:w-[400px] xl:w-full h-[400px]  justify-self-center flex items-center ">
               {codes.map((code, index) => (
                 <pre
                   key={index}
@@ -724,7 +724,7 @@ export default function Section({ slides }) {
           </div>
         </div>
       </div>
-      <div className="md:hidden block">
+      <div className="lg:hidden block">
   <div className="backdrop-blur-xl p-5">
     <div className="flex flex-col gap-6 items-start justify-start">
       {slides.map((slide, index) => (

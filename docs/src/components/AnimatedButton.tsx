@@ -1,4 +1,5 @@
 "use client";
+
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { MdArrowOutward } from "react-icons/md";
@@ -20,9 +21,15 @@ export const AnimatedVisitButton = ({
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    const enterTimeline = gsap.timeline();
-    enterTimeline.fromTo(
-      buttonRef.current.querySelector(".hover-overlay"),
+    const overlay = buttonRef.current.querySelector(".hover-overlay");
+    if (!overlay) return;
+
+    // Kill any previous animations to prevent conflicts
+    gsap.killTweensOf(overlay);
+
+    // Animate the overlay expanding
+    gsap.fromTo(
+      overlay,
       {
         clipPath: `circle(0% at ${x}px ${y}px)`,
       },
@@ -41,9 +48,15 @@ export const AnimatedVisitButton = ({
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    const leaveTimeline = gsap.timeline();
-    leaveTimeline.fromTo(
-      buttonRef.current.querySelector(".hover-overlay"),
+    const overlay = buttonRef.current.querySelector(".hover-overlay");
+    if (!overlay) return;
+
+    // Kill any previous animations to prevent conflicts
+    gsap.killTweensOf(overlay);
+
+    // Animate the overlay contracting
+    gsap.fromTo(
+      overlay,
       {
         clipPath: "circle(150% at 50% 50%)",
       },
@@ -60,7 +73,7 @@ export const AnimatedVisitButton = ({
       <button
         ref={buttonRef}
         className={cn(
-          "relative flex flex-row gap-2 justify-center items-center px-8 py-2 border-black border rounded-full text-[16px] font-Manrope-Bold overflow-hidden text-black bg-white hover:text-white transition cursor-pointer ",
+          "relative flex flex-row gap-2 justify-center items-center px-8 py-2 border-black border rounded-full text-[16px] font-Manrope-Bold overflow-hidden text-black bg-white hover:text-white transition cursor-pointer",
           className
         )}
         onMouseEnter={handleMouseEnter}

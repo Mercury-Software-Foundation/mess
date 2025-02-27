@@ -3,7 +3,7 @@ import React from 'react'
 
 function button() {
   return (
-    <div className='flex  flex-col gap-5 justify-center items-center bg-white/10 border-none rounded-[30px] backdrop-blur-3xl md:p-20 p-5 shadow-md '>
+    <div className='flex  flex-col gap-5 justify-center items-center bg-white/10 border-none rounded-[30px] backdrop-blur-3xl md:p-20 p-5 shadow-md lg:p-10 xl:p-20'>
       <div className='flex flex-row gap-4  '>
         <button className=' rounded-[8px] border-none px-[20px] py-[10px] bg-[#1174BC] text-[20px] cursor-pointer text-white'>Contained</button>
         <button className='border-2 rounded-[8px] border-[#1174BC] px-[20px] py-[10px] bg-transparent text-[20px] cursor-pointer text-[#1174BC] hover:bg-[#1174BC] hover:text-white'>Outlined</button>
