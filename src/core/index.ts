@@ -14,6 +14,7 @@ export const Mess = ({
   customeclasses = "",
   usingClasses = true,
 }: MessObject): string => {
+console.log("------------------------------------------------");
 
   const stylesCssObject: StylesMessInternal | string =
     typeof styles == "string"

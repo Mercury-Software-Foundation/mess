@@ -1,11 +1,11 @@
 import "./styles.css";
 import { Mess, Clx } from "./core";
 import * as tags from "./components/tags";
-export default Mess;
-export { Clx };
-import { MessConfig, Styles, Breakpoint, Breakpoints, Theme } from "./core/types/mess";
+import type { MessConfig, Styles, Breakpoint, Breakpoints, Theme } from "./core/types/mess";
 
 export type { MessConfig, Styles, Breakpoint, Breakpoints, Theme };
+export { Clx };
+export default Mess;
 export const {
   Button,
   Text,
